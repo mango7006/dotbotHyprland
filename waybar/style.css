@@ -1,0 +1,64 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Mononoki Nerd Font";
+  font-weight: 600;
+  font-size: 16px;
+  min-height: 0;
+  color: #ffffff;
+}
+
+window#waybar {
+  background: rgba(40, 40, 40, 0.85);
+  /* backdrop-filter: blur(6px); */
+  border: none;
+  color: #dddddd;
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #21202e;
+  border-radius: 8px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+#custom-notification,
+#mpris,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth {
+  opacity: 1;
+  padding: 0px 7px;
+}
+
+#custom-notification {
+  padding: 7px 7px;
+}
+
+#mpris,
+#clock,
+#network,
+#custom-date,
+#pulseaudio,
+#battery {
+  color: #ffffff
+}
+
+#battery.charging {
+  color: #00ff00; /* Green when charging */
+}
+
+#battery.critical {
+  color: #ff0000; /* Red under 15% */
+}
+
+#battery.full {
+  color: #00ff00; /* Blue when full */
+}
+
+#battery.warning {
+  color: #ffaa00; /* Orange under 30% */
+}

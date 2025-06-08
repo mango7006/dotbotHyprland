@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/hypr: hypr/
+    ~/.config/kitty: kitty/
+    ~/.config/swaync: swaync/
+    ~/.config/waybar: waybar/
+    ~/.config/wofi: wofi/
+
+- create:
+    - ~/Downloads
+    - ~/gits
+    - ~/Screenshots
+    - ~/Sync
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+

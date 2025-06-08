@@ -1,0 +1,56 @@
+window {
+  margin: 0px;
+  background-color: #282828;
+  border-radius: 0px;
+  border: 4px solid #d65d0e;
+  color: #282828;
+  font-family: "Mononoki Nerd Font";
+  font-size: 15px;
+}
+
+#input {
+  margin: 0px;
+  border-radius: 0px;
+  border: none;
+  border-radius: 0px;
+  color: #ffffff;
+  background-color: #282828;
+  padding: 0px;
+}
+
+#inner-box {
+  margin: 10px;
+  border: none;
+  color: #282828;
+  border-radius: 0px;
+}
+
+#outer-box {
+  margin: 15px;
+  border: none;
+}
+
+#scroll {
+  margin: 0px;
+  border: none;
+}
+
+#text {
+  margin: 8px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#entry:selected {
+  background-color: #282828;
+  color: #EADAB1;
+  border-radius: 0px;
+  outline: none;
+}
+
+#entry:selected * {
+  color: #EADAB1;
+  border-radius: 0px;
+  outline: none;
+}
