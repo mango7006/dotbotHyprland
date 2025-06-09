@@ -9,6 +9,8 @@
     "clock",
     "custom/date",
     "custom/notification",
+    "custom/wrk",
+    "hyprland/workspaces",
     "tray",
   ],
   "modules-center": [
@@ -22,17 +24,19 @@
   ],
   "clock": {
     "format": "<span color='#d65d0e'>clk</span> {:%H:%M}",
-    // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "tooltip": false,
     "interval": 30
   },
+"hyprland/workspaces": {
+	"format": "{name}",
+},
   "custom/date": {
     "exec": "date +%d/%m",
     "format": "<span color='#d65d0e'>dat</span> {text}",
     "tooltip": false,
     "interval": 180
   },
-  "custom/workspaces": {
+  "custom/wrk": {
     "format": "<span color='#d65d0e'>wrk</span>",
   },
   "custom/notification": {
@@ -57,7 +61,7 @@
   },
   "mpris": {
     "format": "{artist} / {title}",
-    "max-length": 400,
+    "max-length": 50,
     "ignored-players": [
       "firefox"
     ],
@@ -90,11 +94,8 @@
   "battery": {
     "interval": 1,
     "format": "<span color='#d65d0e'>bat</span> {capacity}%",
-    "format-charging": "<span color='#d65d0e'>bat</span> {capacity}%",
-    "format-plugged": "<span color='#d65d0e'>bat</span> {capacity}%",
     "states": {
-      "good": 85,
-      "warining": 30,
+      "warning": 30,
       "critical": 15,
     }
   }

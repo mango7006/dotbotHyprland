@@ -10,7 +10,6 @@
 
 window#waybar {
   background: rgba(40, 40, 40, 0.85);
-  /* backdrop-filter: blur(6px); */
   border: none;
   color: #dddddd;
 }
@@ -38,21 +37,37 @@ tooltip {
   padding: 7px 7px;
 }
 
+#workspaces button {
+  margin: 0 2px;
+  color: #d8dee9;
+}
+
+#workspaces button.active {
+  /* background-color: #81a1c1; */
+  color: #2e3440;
+}
+
+#workspaces button.urgent {
+  background-color: #bf616a;
+  color: #2e3440;
+}
+
+#workspaces button.visible {
+  /* background-color: #5e81ac; */
+  color: #eceff4;
+}
+
 #mpris,
 #clock,
 #network,
 #custom-date,
 #pulseaudio,
 #battery {
-  color: #ffffff
+  color: #ffffff;
 }
 
 #battery.critical {
   color: #ff0000; /* Red under 15% */
-}
-
-#battery.good {
-  color: #00ff00; /* Blue when full */
 }
 
 #battery.warning {
