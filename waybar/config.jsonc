@@ -70,7 +70,7 @@
   "bluetooth": {
     "format": "<span color='#d65d0e'>blu</span> {status}",
     "tooltip-format": "{device_alias}",
-    "tooltip-format-connected": "<span color='#d65d0e'>blu</span> {device_enumerate}",
+    "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "blueman-manager"
   },
