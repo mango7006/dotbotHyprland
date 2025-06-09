@@ -47,18 +47,18 @@ tooltip {
   color: #ffffff
 }
 
-#battery.charging {
-  color: #00ff00; /* Green when charging */
-}
-
 #battery.critical {
   color: #ff0000; /* Red under 15% */
 }
 
-#battery.full {
+#battery.good {
   color: #00ff00; /* Blue when full */
 }
 
 #battery.warning {
   color: #ffaa00; /* Orange under 30% */
+}
+
+#battery.charging {
+  color: #00ff00; /* Green when charging */
 }

@@ -92,6 +92,10 @@
     "format": "<span color='#d65d0e'>bat</span> {capacity}%",
     "format-charging": "<span color='#d65d0e'>bat</span> {capacity}%",
     "format-plugged": "<span color='#d65d0e'>bat</span> {capacity}%",
-    "format-alt": "<span color='#d65d0e'>bat</span> {time} {icon}",
+    "states": {
+      "good": 85,
+      "warining": 30,
+      "critical": 15,
+    }
   }
 }
