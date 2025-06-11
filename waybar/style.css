@@ -58,6 +58,6 @@ tooltip {
   color: #00ff00; /* Green when charging */
 }
 
-#battery.plugged {
+#battery.full {
   color: #00ff00;
 }
