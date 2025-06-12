@@ -7,13 +7,13 @@
 - clean: ['~']
 
 - link:
-    ~/.config/waypaper : waypaper/
-    ~/.config/hypr: hypr/
-    ~/.config/kitty: kitty/
-    ~/.config/swaync: swaync/
-    ~/.config/waybar: waybar/
-    ~/.config/wofi: wofi/
-    ~/.config/sys64/hud: sys64/hud/
+    ~/.config/waypaper : config/waypaper/
+    ~/.config/hypr: config/hypr/
+    ~/.config/kitty: config/kitty/
+    ~/.config/swaync: config/swaync/
+    ~/.config/waybar: config/waybar/
+    ~/.config/wofi: config/wofi/
+    ~/.config/sys64/hud: config/sys64/hud/
     ~/README.md: README.md
 
 - create:
