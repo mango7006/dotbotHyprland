@@ -26,7 +26,7 @@
   "clock": {
     "format": "<span color='#d65d0e'>clk</span> {:%H:%M}",
     "tooltip": false,
-    "interval": 30
+    "interval": 10
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB \" }'",
@@ -37,10 +37,11 @@
 	  "format": "{name}",
   },
   "custom/date": {
-    "exec": "date +%d/%m",
+    "exec": "~/.config/waybar/date-toggle.sh",
     "format": "<span color='#d65d0e'>dat</span> {text}",
     "tooltip": false,
-    "interval": 180
+    "interval": 180,
+    "on-click": "~/.config/waybar/date-toggle.sh toggle; pkill -RTMIN+10 waybar"
   },
   "custom/wrk": {
     "format": "<span color='#d65d0e'>wrk</span>",
