@@ -22,12 +22,8 @@ tooltip {
   color: #ffffff;
 }
 
-#custom-mem {
-  padding: 0px 0px;
-}
-
-
 #mpris,
+#custom-mem,
 #clock,
 #battery,
 #pulseaudio,

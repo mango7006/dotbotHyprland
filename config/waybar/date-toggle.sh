@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 STATE_FILE="/tmp/waybar_date_toggle_state"
 

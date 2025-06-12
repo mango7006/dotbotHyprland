@@ -8,8 +8,8 @@
   "modules-left": [
     "clock",
     "custom/date",
-    "custom/notification",
     "custom/mem",
+    "custom/notification",
     "custom/wrk",
     "hyprland/workspaces",
     "tray",
@@ -29,7 +29,7 @@
     "interval": 10
   },
   "custom/mem": {
-    "exec": "free -m | awk 'NR==2 { print $3 \" MiB \" }'",
+    "exec": "free -m | awk 'NR==2 { print $3 \" MiB\"}'",
     "format": "<span color='#d65d0e'>mem </span>{text}",
     "interval": 10,
     },
