@@ -22,7 +22,11 @@ tooltip {
   color: #ffffff;
 }
 
-#custom-notification,
+#custom-mem {
+  padding: 0px 0px;
+}
+
+
 #mpris,
 #clock,
 #battery,
@@ -34,9 +38,10 @@ tooltip {
 }
 
 #custom-notification {
-  padding: 7px 7px;
+  padding: 0px 7px;
 }
 
+#custom-mem,
 #mpris,
 #clock,
 #network,

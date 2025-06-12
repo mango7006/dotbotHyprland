@@ -9,6 +9,7 @@
     "clock",
     "custom/date",
     "custom/notification",
+    "custom/mem",
     "custom/wrk",
     "hyprland/workspaces",
     "tray",
@@ -27,9 +28,14 @@
     "tooltip": false,
     "interval": 30
   },
-"hyprland/workspaces": {
-	"format": "{name}",
-},
+  "custom/mem": {
+    "exec": "free -m | awk 'NR==2 { print $3 \" MiB \" }'",
+    "format": "<span color='#d65d0e'>mem </span>{text}",
+    "interval": 10,
+    },
+  "hyprland/workspaces": {
+	  "format": "{name}",
+  },
   "custom/date": {
     "exec": "date +%d/%m",
     "format": "<span color='#d65d0e'>dat</span> {text}",
