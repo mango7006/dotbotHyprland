@@ -7,12 +7,14 @@
 - clean: ['~']
 
 - link:
-    ~/.config/waypaper : config/waypaper/
+    ~/.config/nvim: config/nvim/
+    ~/.config/waypaper: config/waypaper/
     ~/.config/hypr: config/hypr/
     ~/.config/kitty: config/kitty/
     ~/.config/swaync: config/swaync/
     ~/.config/waybar: config/waybar/
     ~/.config/wofi: config/wofi/
+    ~/.config/starship.toml: config/starship.toml
     ~/.config/sys64/hud: config/sys64/hud/
     ~/README.md: README.md
 
