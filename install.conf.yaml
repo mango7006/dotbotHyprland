@@ -7,6 +7,7 @@
 - clean: ['~']
 
 - link:
+    ~/.config/waypaper : waypaper/
     ~/.config/hypr: hypr/
     ~/.config/kitty: kitty/
     ~/.config/swaync: swaync/
