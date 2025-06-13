@@ -22,6 +22,7 @@ tooltip {
   color: #ffffff;
 }
 
+#cpu,
 #mpris,
 #custom-mem,
 #clock,
@@ -37,6 +38,7 @@ tooltip {
   padding: 0px 7px;
 }
 
+#cpu.
 #custom-mem,
 #mpris,
 #clock,

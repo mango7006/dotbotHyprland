@@ -21,6 +21,7 @@
     "bluetooth",
     "pulseaudio",
     "network",
+    "cpu",
     "battery"
   ],
   "clock": {
@@ -28,10 +29,14 @@
     "tooltip": false,
     "interval": 10
   },
+  "cpu": {
+    "format": "<span color='#d65d0e'>cpu</span> {usage}%",
+    "interval": 5,
+  },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\"}'",
     "format": "<span color='#d65d0e'>mem </span>{text}",
-    "interval": 10,
+    "interval": 5,
     },
   "hyprland/workspaces": {
 	  "format": "{name}",

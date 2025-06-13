@@ -21,7 +21,7 @@ fi
 
 # Display according to current state
 if [ "$STATE" == "short" ]; then
-  date +"%d/%m"
+  date +"%d/%m" # e.g. 13/08
 else
-  date +"%d/%B"
+  date +"%d/%h" # e.g. 13/Aug
 fi
