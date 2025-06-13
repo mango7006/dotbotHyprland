@@ -9,7 +9,10 @@ For the full experience also install the extras:
 vlc mpv evince obs-studio spotify-launcher obsidian bitwarden wf-recorder yt-dlp wireguard-tools syncthing qbittorrent decoder discord
 ```
 
+Make sure you have an AUR helper installed like [paru](https://github.com/Morganamilo/paru?tab=readme-ov-file#installation) or [yay](https://github.com/Jguer/yay?tab=readme-ov-file#installation)
+
 For AUR stuff install the following:
 ```shell
+yay -S clipse-bin syshud bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
 paru -S clipse-bin syshud bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
 ```
