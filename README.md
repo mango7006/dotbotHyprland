@@ -13,9 +13,3 @@ For AUR stuff install the following:
 ```shell
 paru -S clipse-bin syshud bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
 ```
-
-And lastly, make sure you have installed the `hyprexpo` plugin for Hyprland:
-```shell
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm enable hyprexpo
-```
