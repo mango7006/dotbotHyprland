@@ -77,8 +77,7 @@ cleantmp() {
 
   paccache -rk1
   sudo systemd-tmpfiles --clean
-  sudo pacman -Scc --noconfirm
-  paru -Scc --noconfirm
+  paru -Sc --noconfirm
   sudo journalctl --vacuum-time=7d
   rm -rf ~/.cache/paru/clone/
   yes | trash-empty
@@ -96,16 +95,12 @@ cleantmp() {
   echo "Cleanup complete. Freed $freed_hr."
 }
 
-wifi() {
-  if [[ -z "$1" ]]; then
-    echo "Usage: wifi <SSID>"
-    return 1
-  fi
-  nmcli d wifi connect "$1"
-}
-
 zsh_install() {
   sudo pacman -S --needed neovim starship zoxide bat eza fastfetch trash-cli ripgrep pacman-contrib fzf fd
+}
+
+neovim_install() {
+  sudo pacman -S --needed neovim lazygit luarocks npm typescript unzip minizip fzf 
 }
 
 refresh() {
