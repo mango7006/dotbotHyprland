@@ -2,7 +2,7 @@
 
 STATE_FILE="/tmp/waybar_date_toggle_state"
 
-# Set default state if not exists
+# Make state file
 if [ ! -f "$STATE_FILE" ]; then
   echo "short" >"$STATE_FILE"
 fi
