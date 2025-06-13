@@ -21,6 +21,7 @@
     "bluetooth",
     "pulseaudio",
     "network",
+    "custom/wireguard",
     "cpu",
     "battery"
   ],
@@ -102,6 +103,10 @@
     "tooltip-format": "{cidr} - {ifname} via {gwaddr}",
     "format-disconnected": "󰖪 ⚠",
     "on-click": "nm-connection-editor"
+  },
+  "custom/wireguard": {
+    "exec": "~/.config/waybar/wg-status.sh",
+    "interval": 5,
   },
   "battery": {
     "interval": 1,
