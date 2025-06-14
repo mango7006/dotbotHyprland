@@ -35,7 +35,7 @@ tooltip {
 #network,
 #bluetooth {
   opacity: 1;
-  padding: 0px 7px;
+  padding: 7px 7px;
 }
 
 #custom-notification {

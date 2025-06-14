@@ -10,10 +10,10 @@
     "custom/date",
     "custom/wttr",
     // "custom/uptime",
-    "bluetooth",
+    // "bluetooth",
     "custom/notification",
-    "custom/wrk",
-    "hyprland/workspaces",
+    // "custom/wrk",
+    // "hyprland/workspaces",
     "tray",
   ],
   "modules-center": [
@@ -42,8 +42,11 @@
     "interval": 2,
   },
   "custom/wttr": {
-    "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
+    // this part is Netherlands only, if you wish to change it to your country, uncomment the other exec line and change the on-click link
+    // "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
+    "exec": "~/.config/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
+    "on-click": "firefox --new-tab https://www.buienradar.nl/",
     "interval": 500,
   },
   "custom/mem": {
