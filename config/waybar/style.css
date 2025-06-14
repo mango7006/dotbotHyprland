@@ -22,10 +22,14 @@ tooltip {
   color: #ffffff;
 }
 
+#custom-uptime,
+#custom-wireguard,
 #cpu,
 #mpris,
 #custom-mem,
 #clock,
+#custom-wttr,
+#tray,
 #battery,
 #pulseaudio,
 #network,
@@ -38,7 +42,10 @@ tooltip {
   padding: 0px 7px;
 }
 
-#cpu.
+#custom-wttr,
+#custom-uptime,
+#custom-wireguard,
+#cpu,
 #custom-mem,
 #mpris,
 #clock,

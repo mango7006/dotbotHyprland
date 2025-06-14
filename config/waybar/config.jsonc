@@ -8,7 +8,9 @@
   "modules-left": [
     "clock",
     "custom/date",
-    "custom/mem",
+    "custom/wttr",
+    // "custom/uptime",
+    "bluetooth",
     "custom/notification",
     "custom/wrk",
     "hyprland/workspaces",
@@ -18,36 +20,46 @@
     "mpris",
   ],
   "modules-right": [
-    "bluetooth",
     "pulseaudio",
     "network",
     "custom/wireguard",
+    "custom/mem",
     "cpu",
     "battery"
   ],
   "clock": {
     "format": "<span color='#d65d0e'>clk</span> {:%H:%M}",
     "tooltip": false,
-    "interval": 10
+    "interval": 6,
   },
+  // "custom/uptime": {
+  //   "exec": "uptime -p | awk '{gsub(\"up \", \"\"); print}'",
+  //   "format": "<span color='#d65d0e'>up</span> {text}",
+  //   "interval": 10,
+  // },
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
-    "interval": 5,
+    "interval": 2,
+  },
+  "custom/wttr": {
+    "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
+    "format": "<span color='#d65d0e'>wtr</span> {text}",
+    "interval": 500,
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\"}'",
-    "format": "<span color='#d65d0e'>mem </span>{text}",
-    "interval": 5,
+    "format": "<span color='#d65d0e'>mem</span> {text}",
+    "interval": 2,
     },
   "hyprland/workspaces": {
 	  "format": "{name}",
   },
   "custom/date": {
-    "exec": "~/.config/waybar/date-toggle.sh",
+    "exec": "~/.config/scripts/date-toggle.sh",
     "format": "<span color='#d65d0e'>dat</span> {text}",
     "tooltip": false,
     "interval": 180,
-    "on-click": "~/.config/waybar/date-toggle.sh toggle; pkill -RTMIN+10 waybar"
+    "on-click": "~/.config/scripts/date-toggle.sh toggle; pkill -RTMIN+10 waybar",
   },
   "custom/wrk": {
     "format": "<span color='#d65d0e'>wrk</span>",
@@ -105,7 +117,9 @@
     "on-click": "nm-connection-editor"
   },
   "custom/wireguard": {
-    "exec": "~/.config/waybar/wg-status.sh",
+    "exec": "~/.config/scripts/wg-status.sh",
+    "format": "<span color='#d65d0e'>wg</span> {text}",
+    "tooltip": false,
     "interval": 5,
   },
   "battery": {

@@ -6,6 +6,7 @@ SUPER + M = exit Hyprland
 SUPER + V = toggle floating mode
 SUPER + A = app launcher (wofi)
 SUPER + F = browser (firefox)
+SUPER + T = toggle wireguard tunnel (wg0)
 SUPER + P = browser private window (firefox)
 SUPER + L = hyprlock
 SUPER + X = logout menu

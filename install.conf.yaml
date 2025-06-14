@@ -15,6 +15,7 @@
     ~/.config/waybar: config/waybar/
     ~/.config/wofi: config/wofi/
     ~/.config/starship.toml: config/starship.toml
+    ~/.config/scripts: config/scripts/
     ~/.config/sys64/hud: config/sys64/hud/
     ~/.zshrc: home/.zshrc
     ~/README.md: README.md
