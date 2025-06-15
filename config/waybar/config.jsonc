@@ -6,9 +6,12 @@
   "gtk-layer-shell": true,
   "height": 35,
   "modules-left": [
+    // There are some optional modules that I do not need, enable and disable at will, they are all correctly styled
     "clock",
     "custom/date",
-    "custom/wttr",
+    // Change the weather provider from Netherlands to International if needed
+    "custom/wttrNL",
+    // "custom/wttrINT",
     // "custom/uptime",
     // "bluetooth",
     "custom/notification",
@@ -32,28 +35,35 @@
     "tooltip": false,
     "interval": 6,
   },
-  // "custom/uptime": {
-  //   "exec": "uptime -p | awk '{gsub(\"up \", \"\"); print}'",
-  //   "format": "<span color='#d65d0e'>up</span> {text}",
-  //   "interval": 10,
-  // },
+  "custom/uptime": {
+    "exec": "uptime -p | awk '{gsub(\"up \", \"\"); print}'",
+    "format": "<span color='#d65d0e'>up</span> {text}",
+    "interval": 10,
+  },
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
     "interval": 2,
   },
-  "custom/wttr": {
-    // this part is Netherlands only, if you wish to change it to your country, uncomment the other exec line and change the on-click link
-    // "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
+  "custom/wttrNL": {
     "exec": "~/.config/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "on-click": "firefox --new-tab https://www.buienradar.nl/",
-    "interval": 500,
+    "interval": 600,
+  },
+  "custom/wttrINT": {
+    "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
+    "format": "<span color='#d65d0e'>wtr</span> {text}",
+    "on-click": "firefox --new-tab https://www.accuweather.com/en/",
+    "interval": 600,
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\"}'",
     "format": "<span color='#d65d0e'>mem</span> {text}",
     "interval": 2,
     },
+  "custom/wrk": {
+    "format": "<span color='#d65d0e'>wrk</span>",
+  },
   "hyprland/workspaces": {
 	  "format": "{name}",
   },
@@ -63,9 +73,6 @@
     "tooltip": false,
     "interval": 180,
     "on-click": "~/.config/scripts/date-toggle.sh toggle; pkill -RTMIN+10 waybar",
-  },
-  "custom/wrk": {
-    "format": "<span color='#d65d0e'>wrk</span>",
   },
   "custom/notification": {
     "tooltip": false,

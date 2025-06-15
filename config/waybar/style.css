@@ -28,7 +28,8 @@ tooltip {
 #mpris,
 #custom-mem,
 #clock,
-#custom-wttr,
+#custom-wttrINT,
+#custom-wttrNL,
 #tray,
 #battery,
 #pulseaudio,
@@ -42,8 +43,9 @@ tooltip {
   padding: 0px 7px;
 }
 
-#custom-wttr,
+#custom-wttrNL,
 #custom-uptime,
+#custom-wttrINT,
 #custom-wireguard,
 #cpu,
 #custom-mem,

@@ -20,7 +20,7 @@ if [ "$1" == "toggle" ]; then
 fi
 
 # Display according to current state
-if [ "$STATE" == "short" ]; then
+if [ "$STATE" == "long" ]; then
   date +"%d/%m" # e.g. 13/08
 else
   date +"%d/%h" # e.g. 13/Aug
