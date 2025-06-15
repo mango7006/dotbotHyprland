@@ -54,7 +54,7 @@
     "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "on-click": "firefox --new-tab https://www.accuweather.com/en/",
-    "interval": 600,
+    "interval": 120,
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\"}'",
