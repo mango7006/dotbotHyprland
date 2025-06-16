@@ -16,8 +16,22 @@
 - Fully themed terminal and WM
 
 ## Install
-Hi there, if you have just installed these dotfiles, please install the following applications:
-
+### Using dotbot:
+*BEWARE, THIS REMOVES THE OLD FILES, MAKE SURE YOU HAVE A BACKUP*
+```shell
+git clone https://mango7006/dotbotHyprland.git
+cd dotbotHyprland
+./install
+```
+### Manually
+```shell
+git clone https://mango7006/dotbotHyprland.git
+```
+Then just use `cp` to copy the files to the right destination, for example:
+```shell
+cp -r hypr ~/.config/hypr
+```
+### Dependencies
 ```shell
 sudo pacman -Syu base-devel bat blueman-manager brightnessctl eza feh firefox fastfetch fzf gammastep git hyprland hyprlock hyprlock hyprpicker kitty lazygit libnotify luarocks minizip neovim nm-connection-editor npm nwg-look pavucontrol playerctl qt5-wayland qt6-5compat qt6-shadertools qt6-wayland ripgrep starship swaync swww trash-cli ttf-droid ttf-font-awesome ttf-ibm-plex ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-mononoki-nerd ttf-nerd-fonts-symbols typescript unzip waybar wl-clipboard wofi xdg-desktop-portal-gtk xdg-desktop-portal-hyprland xdg-desktop-portal-wlr yazi zoxide
 ```
