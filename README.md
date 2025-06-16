@@ -1,3 +1,21 @@
+# My semi-minimalistic dotfiles for Arch Linux
+
+![Screenshot1](assets/2025-06-16-221406_hyprshot.png)
+
+## Overview
+- Gruvbox theme
+- Hyprland
+- Kitty
+- Waybar
+- Sway Notification Centre
+- Syshud volume and brightness OSD
+- Wofi
+- Neovim
+- Zsh
+- Custom scripts
+- Fully themed terminal and WM
+
+## Install
 Hi there, if you have just installed these dotfiles, please install the following applications:
 
 ```shell
