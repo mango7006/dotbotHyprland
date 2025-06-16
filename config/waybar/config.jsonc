@@ -47,20 +47,26 @@
   "custom/wttrNL": {
     "exec": "~/.config/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
+    "tooltip": false,
     "on-click": "firefox --new-tab https://www.buienradar.nl/",
-    "interval": 600,
+    "interval": 120,
   },
   "custom/wttrINT": {
     "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
+    "tooltip": false,
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "on-click": "firefox --new-tab https://www.accuweather.com/en/",
     "interval": 120,
   },
   "custom/mem": {
-    "exec": "free -m | awk 'NR==2 { print $3 \" MiB\"}'",
+    "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
     "format": "<span color='#d65d0e'>mem</span> {text}",
+    "tooltip": true,
+    "tooltip-format": "<span color='#d65d0e'>mem</span> {percentage}%",
     "interval": 2,
-    },
+    "return-type": "json",
+    "exec": "free -m | awk 'NR==2 { printf \"{\\\"text\\\": \\\"%s MiB\\\", \\\"percentage\\\": %d }\\n\", $3, ($3*100)/$2 }'"
+  },
   "custom/wrk": {
     "format": "<span color='#d65d0e'>wrk</span>",
   },

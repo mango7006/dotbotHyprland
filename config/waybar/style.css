@@ -15,9 +15,9 @@ window#waybar {
 }
 
 tooltip {
-  background: rgba(0, 0, 0, 0.9);
-  border: 2px solid #21202e;
-  border-radius: 8px;
+  background: rgba(40, 40, 40, 0.85);
+  border: 2px solid #d65d0e;
+  border-radius: 0px;
   padding: 10px;
   color: #ffffff;
 }
@@ -28,34 +28,19 @@ tooltip {
 #mpris,
 #custom-mem,
 #clock,
+#custom-date,
 #custom-wttrINT,
 #custom-wttrNL,
+#custom-wrk,
 #tray,
+#custom-notification,
 #battery,
 #pulseaudio,
 #network,
 #bluetooth {
   opacity: 1;
-  padding: 7px 7px;
-}
-
-#custom-notification {
-  padding: 0px 7px;
-}
-
-#custom-wttrNL,
-#custom-uptime,
-#custom-wttrINT,
-#custom-wireguard,
-#cpu,
-#custom-mem,
-#mpris,
-#clock,
-#network,
-#custom-date,
-#pulseaudio,
-#battery {
   color: #ffffff;
+  padding: 0px 5px;
 }
 
 #battery.critical {

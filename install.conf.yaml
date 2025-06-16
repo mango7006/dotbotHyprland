@@ -14,6 +14,8 @@
     ~/.config/swaync: config/swaync/
     ~/.config/waybar: config/waybar/
     ~/.config/wofi: config/wofi/
+    ~/.config/gtk-3.0: config/gtk-3.0/
+    ~/.config/gtk-4.0: config/gtk-4.0/
     ~/.config/starship.toml: config/starship.toml
     ~/.config/scripts: config/scripts/
     ~/.config/sys64/hud: config/sys64/hud/
