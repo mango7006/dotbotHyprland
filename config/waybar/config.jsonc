@@ -9,6 +9,7 @@
     // There are some optional modules that I do not need, enable and disable at will, they are all correctly styled
     "clock",
     "custom/date",
+    "custom/keyboard",
     // Change the weather provider from Netherlands to International if needed
     "custom/wttrNL",
     // "custom/wttrINT",
@@ -57,6 +58,13 @@
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "on-click": "firefox --new-tab https://www.accuweather.com/en/",
     "interval": 120,
+  },
+  "custom/keyboard": {
+    "interval": 1,
+    "exec": "~/.config/scripts/keyboard-checker.sh",
+    "format": "<span color='#d65d0e'>kbd</span> {text}",
+    "on-click": "~/.config/scripts/keyboard-toggle.sh",
+    "tooltip": false,
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
