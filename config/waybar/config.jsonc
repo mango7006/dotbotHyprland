@@ -61,9 +61,9 @@
   },
   "custom/keyboard": {
     "interval": 1,
-    "exec": "~/.config/scripts/keyboard-checker.sh",
+    "exec": "~/.config/scripts/keyboard-master.sh check",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
-    "on-click": "~/.config/scripts/keyboard-toggle.sh",
+    "on-click": "~/.config/scripts/keyboard-master.sh toggle",
     "tooltip": false,
   },
   "custom/mem": {
@@ -141,7 +141,7 @@
     "on-click": "nm-connection-editor"
   },
   "custom/wireguard": {
-    "exec": "~/.config/scripts/wg-status.sh",
+    "exec": "~/.config/scripts/wireguard-master.sh check",
     "format": "<span color='#d65d0e'>wg</span> {text}",
     "tooltip": false,
     "interval": 5,

@@ -1,4 +1,9 @@
 * {
-    font-family: "Mononoki Nerd Font";
+  background-color: #282828;
+  font-family: "Mononoki Nerd Font";
+  color: #dcdcdc;
 }
 
+window {
+  background-color: #121212;
+}
