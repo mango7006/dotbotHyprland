@@ -28,6 +28,7 @@
     "network",
     "custom/wireguard",
     "custom/mem",
+    // "custom/temp",
     "cpu",
     "battery"
   ],
@@ -44,6 +45,12 @@
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
     "interval": 2,
+  },
+  "custom/temp": {
+    "exec": "sensors | grep 'CPU' | awk 'NR==2 {print $2}' | sed 's/+//g'",
+    "format": "<span color='#d65d0e'>tmp</span> {text}",
+    "interval": 5,
+    "tooltip": false,
   },
   "custom/wttrNL": {
     "exec": "~/.config/scripts/weather-buienradar.sh",
@@ -114,7 +121,7 @@
     "ignored-players": [
       "firefox"
     ],
-    "interval": 2
+    "interval": 1,
   },
   "bluetooth": {
     "format": "<span color='#d65d0e'>blu</span> {status}",
