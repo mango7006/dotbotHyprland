@@ -68,9 +68,9 @@
   },
   "custom/keyboard": {
     "interval": 1,
-    "exec": "~/.config/scripts/keyboard-master.sh check",
+    "exec": "~/.config/scripts/keyboard-hyprland.sh check",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
-    "on-click": "~/.config/scripts/keyboard-master.sh toggle",
+    "on-click": "~/.config/scripts/keyboard-hyprland.sh toggle",
     "tooltip": false,
   },
   "custom/mem": {
@@ -134,8 +134,8 @@
     "format": "<span color='#d65d0e'>vol</span> {volume}",
     "tooltip": true,
     "format-muted": "<span color='#d65d0e'>vol</span> muted",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-click-right": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "pavucontrol",
     "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
     "scroll-step": 5,

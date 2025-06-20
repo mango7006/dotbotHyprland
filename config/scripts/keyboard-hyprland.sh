@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This keyboard switcher is yank and Hyprland only, disable or change module with other WM's
+
 CONFIG_FILE="$HOME/.config/hypr/hyprinputTEMP.conf"
 LINE="kb_variant = intl"
 

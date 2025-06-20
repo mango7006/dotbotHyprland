@@ -2,7 +2,7 @@
 require("config.lazy")
 require("highlight-undo").setup({})
 require("urlview").setup({})
-vim.o.scrolloff = 10
+vim.o.scrolloff = 15
 vim.filetype.add({
     extension = { rasi = "rasi" },
     pattern = {

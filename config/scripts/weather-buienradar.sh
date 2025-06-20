@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script is NL/buienradar only, change the waybar module to be custom/wttrINT for international weather
+
 round() {
   local input="$1"
   printf "%.0f\n" "$input"
