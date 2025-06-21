@@ -13,6 +13,10 @@ if [ "$1" == "toggle" ]; then
   # Toggle state
   if [ "$STATE" == "short" ]; then
     echo "long" >"$STATE_FILE"
+  elif [ "$STATE" == "long" ]; then
+    echo "day" >"$STATE_FILE"
+  elif [ "$STATE" == "day" ]; then
+    echo "short" >"$STATE_FILE"
   else
     echo "short" >"$STATE_FILE"
   fi
@@ -22,6 +26,8 @@ fi
 # Display according to current state
 if [ "$STATE" == "long" ]; then
   date +"%d/%m" # e.g. 13/08
-else
+elif [ "$STATE" == "short" ]; then
   date +"%d/%h" # e.g. 13/Aug
+elif [ "$STATE" == "day" ]; then
+  date +"%a %d/%h" # e.g. Sat 13/Aug
 fi

@@ -34,8 +34,8 @@
   ],
   "clock": {
     "format": "<span color='#d65d0e'>clk</span> {:%H:%M}",
-    "tooltip": false,
-    "interval": 6,
+    "tooltip-format": "{:%H:%M:%S}",
+    "interval": 1,
   },
   "custom/uptime": {
     "exec": "uptime -p | awk '{gsub(\"up \", \"\"); print}'",
@@ -77,6 +77,7 @@
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
     "format": "<span color='#d65d0e'>mem</span> {text}",
     "tooltip": true,
+    "on-click": "kitty -e btop",
     "tooltip-format": "<span color='#d65d0e'>mem</span> {percentage}%",
     "interval": 2,
     "return-type": "json",
@@ -92,7 +93,7 @@
     "exec": "~/.config/scripts/date-toggle.sh",
     "format": "<span color='#d65d0e'>dat</span> {text}",
     "tooltip": false,
-    "interval": 180,
+    "interval": 5,
     "on-click": "~/.config/scripts/date-toggle.sh toggle; pkill -RTMIN+10 waybar",
   },
   "custom/notification": {
