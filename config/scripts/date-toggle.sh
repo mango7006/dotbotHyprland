@@ -10,24 +10,16 @@ fi
 STATE=$(cat "$STATE_FILE")
 
 if [ "$1" == "toggle" ]; then
-  # Toggle state
-  if [ "$STATE" == "short" ]; then
-    echo "long" >"$STATE_FILE"
-  elif [ "$STATE" == "long" ]; then
-    echo "day" >"$STATE_FILE"
-  elif [ "$STATE" == "day" ]; then
-    echo "short" >"$STATE_FILE"
-  else
-    echo "short" >"$STATE_FILE"
-  fi
+  case "$STATE" in
+  short) echo "long" >"$STATE_FILE" ;;
+  long) echo "day" >"$STATE_FILE" ;;
+  day | *) echo "short" >"$STATE_FILE" ;;
+  esac
   exit 0
 fi
 
-# Display according to current state
-if [ "$STATE" == "long" ]; then
-  date +"%d/%m" # e.g. 13/08
-elif [ "$STATE" == "short" ]; then
-  date +"%d/%h" # e.g. 13/Aug
-elif [ "$STATE" == "day" ]; then
-  date +"%a %d/%h" # e.g. Sat 13/Aug
-fi
+case "$STATE" in
+short) date +"%d/%m" ;;      # e.g. 13/08
+long) date +"%d/%b" ;;       # e.g. 13/Aug
+day | *) date +"%a %d/%b" ;; # e.g. Sat 13/Aug
+esac

@@ -70,7 +70,7 @@
     "interval": 1,
     "exec": "~/.config/scripts/keyboard-hyprland.sh check",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
-    "on-click": "~/.config/scripts/keyboard-hyprland.sh toggle",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
     "tooltip": false,
   },
   "custom/mem": {
