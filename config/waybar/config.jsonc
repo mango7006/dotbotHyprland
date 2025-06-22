@@ -9,7 +9,7 @@
     // There are some optional modules that I do not need, enable and disable at will, they are all correctly styled
     "clock",
     "custom/date",
-    "custom/keyboard",
+    "custom/keyboardHypr",
     // Change the weather provider from Netherlands to International if needed
     "custom/wttrNL",
     // "custom/wttrINT",
@@ -66,9 +66,9 @@
     "on-click": "firefox --new-tab https://www.accuweather.com/en/",
     "interval": 120,
   },
-  "custom/keyboard": {
+  "custom/keyboardHypr": {
     "interval": 1,
-    "exec": "~/.config/scripts/keyboard-hyprland.sh check",
+    "exec": "if hyprctl devices | grep -q \"intl., with\"; then echo \"intl\"; else echo \"us\"; fi",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
     "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
     "tooltip": false,
