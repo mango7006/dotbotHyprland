@@ -4,7 +4,7 @@ STATE_FILE="/tmp/waybar_date_toggle_state"
 
 # Make state file
 if [ ! -f "$STATE_FILE" ]; then
-  echo "short" >"$STATE_FILE"
+  echo "long" >"$STATE_FILE"
 fi
 
 STATE=$(cat "$STATE_FILE")
