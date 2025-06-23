@@ -9,7 +9,7 @@
     // There are some optional modules that I do not need, enable and disable at will, they are all correctly styled
     // Please make sure you also have the required scripts in ~/.config/scripts/
     "clock",
-    "custom/date",
+    "clock#date",
     "custom/keyboardHypr",
     // Change the weather provider from Netherlands to International if needed
     "custom/wttrNL",
@@ -34,8 +34,15 @@
     "battery"
   ],
   "clock": {
-    "format": "<span color='#d65d0e'>clk</span> {:%H:%M}",
-    "tooltip-format": "{:%H:%M:%S}",
+    "format": "<span color='#d65d0e'>clk</span> {:%R}",
+    "tooltip-format": "{:%R:%S}",
+    "format-alt": "<span color='#d65d0e'>clk</span> {:%r}",
+    "interval": 1,
+  },
+  "clock#date": {
+    "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
+    "tooltip-format": "{:%a %d/%b %Y}",
+    "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m}",
     "interval": 1,
   },
   "custom/uptime": {
@@ -89,13 +96,6 @@
   },
   "hyprland/workspaces": {
 	  "format": "{name}",
-  },
-  "custom/date": {
-    "exec": "~/.config/scripts/date-toggle.sh",
-    "format": "<span color='#d65d0e'>dat</span> {text}",
-    "tooltip": false,
-    "interval": 5,
-    "on-click": "~/.config/scripts/date-toggle.sh toggle; pkill -RTMIN+10 waybar",
   },
   "custom/notification": {
     "tooltip": false,
