@@ -8,4 +8,4 @@ ICON=$(curl -s "wttr.in/?format=%c" | sed 's/+//g; s/C/C /g; s/ //g')
 
 ROUNDED=$(printf "%.0f°C" "$TEMP")
 
-echo $ROUNDED$ICON
+echo ""$ROUNDED""$ICON""

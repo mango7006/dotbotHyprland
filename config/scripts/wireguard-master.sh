@@ -3,7 +3,7 @@
 INTERFACE="wg0"
 
 check() {
-  if ip link show "$INTERFACE" up >/dev/null 2>&1; then
+  if ip link show "$INTERFACE" &>/dev/null; then
     echo "act"
   else
     exit 0

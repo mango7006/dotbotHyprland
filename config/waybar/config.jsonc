@@ -11,11 +11,11 @@
     "clock",
     "clock#date",
     "custom/keyboardHypr",
+    "bluetooth",
     // Change the weather provider from Netherlands to International if needed
     "custom/wttrNL",
     // "custom/wttrINT",
     // "custom/uptime",
-    // "bluetooth",
     "custom/notification",
     // "custom/wrk",
     // "hyprland/workspaces",
@@ -29,7 +29,7 @@
     "network",
     "custom/wireguard",
     "custom/mem",
-    // "custom/temp",
+    "custom/temp",
     "cpu",
     "battery"
   ],
@@ -55,7 +55,7 @@
     "interval": 2,
   },
   "custom/temp": {
-    "exec": "sensors | grep 'CPU' | awk 'NR==2 {print $2}' | sed 's/+//g'",
+    "exec": "sensors | grep 'CPU' | awk 'NR==2 {print $2}' | sed 's/+//g; s/\\.0//g'",
     "format": "<span color='#d65d0e'>tmp</span> {text}",
     "interval": 5,
     "tooltip": false,

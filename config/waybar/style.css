@@ -22,24 +22,25 @@ tooltip {
   color: #ffffff;
 }
 
-#custom-keyboardHypr,
-#custom-uptime,
-#custom-wireguard,
-#cpu,
-#mpris,
-#custom-temp,
-#custom-mem,
 #clock,
 #clock.date,
-#custom-wttrINT,
+#custom-keyboardHypr,
 #custom-wttrNL,
-#custom-wrk,
-#tray,
+#custom-wttrINT,
+#custom-uptime,
+#bluetooth,
 #custom-notification,
-#battery,
+#custom-wrk,
+#hyprland-workspaces,
+#tray,
+#mpris,
 #pulseaudio,
 #network,
-#bluetooth {
+#custom-wireguard,
+#custom-mem,
+#custom-temp,
+#cpu,
+#battery {
   opacity: 1;
   color: #ffffff;
   padding: 0px 5px;
