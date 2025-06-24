@@ -157,9 +157,8 @@
   },
   "battery": {
     "interval": 1,
+    "format": "<span color='#d65d0e'>bat</span> {capacity}%",
     "format-charging": "<span color='#d65d0e'>bat</span> {capacity}%",
     "format-plugged": "<span color='#d65d0e'>bat</span> {capacity}%",
-    "format-alt": "<span color='#d65d0e'>bat</span> {time} {icon}",
-    "format": "<span color='#d65d0e'>bat</span> {capacity}%",
   }
 }
