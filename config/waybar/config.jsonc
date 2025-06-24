@@ -36,12 +36,12 @@
   "clock": {
     "format": "<span color='#d65d0e'>clk</span> {:%R}",
     "tooltip-format": "{:%R:%S}",
-    "format-alt": "<span color='#d65d0e'>clk</span> {:%r}",
+    "format-alt": "<span color='#d65d0e'>clk</span> {:%I:%M %p}",
     "interval": 1,
   },
   "clock#date": {
     "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
-    "tooltip-format": "{:%a %d/%b %Y}",
+    "tooltip-format": "{:%a %d %b %Y}",
     "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m}",
     "interval": 1,
   },
