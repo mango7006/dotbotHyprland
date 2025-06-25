@@ -39,6 +39,10 @@ cd() {
   __zoxide_z "$@" && ls
 }
 
+AI() {
+  source ~/Python/RobotAi/venv/bin/activate; python3 ~/Python/RobotAi/AAI.py 2>/dev/null; deactivate
+}
+
 alias cp="cp -v"
 alias mv="mv -v"
 
