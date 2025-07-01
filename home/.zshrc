@@ -40,7 +40,7 @@ cd() {
 }
 
 AI() {
-  source ~/Python/RobotAi/venv/bin/activate; python3 ~/Python/RobotAi/AAI.py 2>/dev/null; deactivate
+  source ~/Code/RobotAi/venv/bin/activate; python3 ~/Code/RobotAi/AAI.py 2>/dev/null; deactivate
 }
 
 alias cp="cp -v"

@@ -13,8 +13,7 @@
     "custom/keyboardHypr",
     "bluetooth",
     // Change the weather provider from Netherlands to International if needed
-    "custom/wttrNL",
-    // "custom/wttrINT",
+    "custom/wttr",
     // "custom/uptime",
     "custom/notification",
     // "custom/wrk",
@@ -60,14 +59,7 @@
     "interval": 5,
     "tooltip": false,
   },
-  "custom/wttrNL": {
-    "exec": "~/.config/scripts/weather-buienradar.sh",
-    "format": "<span color='#d65d0e'>wtr</span> {text}",
-    "tooltip": false,
-    "on-click": "firefox --new-tab https://www.buienradar.nl/",
-    "interval": 120,
-  },
-  "custom/wttrINT": {
+  "custom/wttr": {
     "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
     "tooltip": false,
     "format": "<span color='#d65d0e'>wtr</span> {text}",
@@ -85,7 +77,6 @@
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
     "format": "<span color='#d65d0e'>mem</span> {text}",
     "tooltip": true,
-    "on-click": "kitty -e btop",
     "tooltip-format": "<span color='#d65d0e'>mem</span> {percentage}%",
     "interval": 2,
     "return-type": "json",
