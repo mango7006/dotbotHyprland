@@ -1,9 +1,9 @@
 window {
   margin: 0px;
-  background-color: #282828;
+  background-color: rgba(40, 40, 40, 0.85);
   border-radius: 0px;
   border: 4px solid #d65d0e;
-  color: #282828;
+  color: rgba(40, 40, 40, 0.85);
   font-family: "Mononoki Nerd Font";
   font-size: 15px;
 }
@@ -12,16 +12,14 @@ window {
   margin: 0px;
   border-radius: 0px;
   border: none;
-  border-radius: 0px;
-  color: #ffffff;
-  background-color: #282828;
+  background-color: rgba(40, 40, 40, 0);
   padding: 0px;
 }
 
 #inner-box {
   margin: 10px;
   border: none;
-  color: #282828;
+  color: rgba(40, 40, 40, 0.85);
   border-radius: 0px;
 }
 
@@ -43,14 +41,14 @@ window {
 }
 
 #entry:selected {
-  background-color: #282828;
-  color: #EADAB1;
-  border-radius: 0px;
-  outline: none;
+  /* background-color: rgba(40, 40, 40, 0.85); */
+  /* color: rgba(234, 218, 177, 0.85); */
+  /* border-radius: 0px; */
+  /* outline: none; */
 }
 
 #entry:selected * {
-  color: #EADAB1;
-  border-radius: 0px;
-  outline: none;
+  /* color: rgba(40, 40, 40, 0.85); */
+  /* border-radius: 0px; */
+  /* outline: none; */
 }
