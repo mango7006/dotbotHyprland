@@ -1,9 +1,10 @@
 #syshud {
+	background: rgba(40, 40, 40, 0.85);
 	background: transparent;
 }
 
 #syshud .box_layout {
-	background: #282828;
+	background: rgba(40, 40, 40, 0.85);
 	border-radius: 0px;
 	border: 4px solid #d65d0e;
 	margin: 10px;

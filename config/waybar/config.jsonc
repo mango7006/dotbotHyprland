@@ -4,7 +4,7 @@
   "mode": "dock",
   "exclusive": true,
   "gtk-layer-shell": true,
-  "height": 35,
+  "height": 40,
   "modules-left": [
     // There are some optional modules that I do not need, enable and disable at will, they are all correctly styled
     // Please make sure you also have the required scripts in ~/.config/scripts/

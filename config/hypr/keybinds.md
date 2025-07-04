@@ -15,5 +15,5 @@ SUPER + G = toggle blue-light filter
 SUPER + H = toggle notification center
 SUPER + J = clear notifications
 SUPER + SHIFT + A = open clipse clipboard history
-SUPER + SHIFT + SLASH = show this help menu
+SUPER + SHIFT + ? = show this help menu
 SUPER + SHIFT + F = fullscreen
