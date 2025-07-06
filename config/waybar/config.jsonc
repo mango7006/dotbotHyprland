@@ -42,7 +42,7 @@
   "clock#date": {
     "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
     "tooltip-format": "{:%a %d %b %Y}",
-    "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m}",
+    "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m/%Y}",
     "interval": 1,
   },
   "custom/keyboardHypr": {
