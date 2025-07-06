@@ -35,6 +35,8 @@ alias la="eza -alh --color=auto --icons"
 alias cat="bat"
 alias rcat="cat"
 
+alias glance="glance -config ~/.config/glance/glance.yml"
+
 cd() {
   __zoxide_z "$@" && ls
 }
