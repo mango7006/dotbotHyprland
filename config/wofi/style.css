@@ -40,16 +40,3 @@ window {
   color: #ffffff;
   font-weight: 700;
 }
-
-#entry:selected {
-  /* background-color: rgba(40, 40, 40, 0.85); */
-  /* color: rgba(234, 218, 177, 0.85); */
-  /* border-radius: 0px; */
-  /* outline: none; */
-}
-
-#entry:selected * {
-  /* color: rgba(40, 40, 40, 0.85); */
-  /* border-radius: 0px; */
-  /* outline: none; */
-}
