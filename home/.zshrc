@@ -57,6 +57,8 @@ alias ff="kitten icat -n --place 30x30@0x2 --scale-up --align left ~/Downloads/b
 alias neovim="nvim"
 alias nano="nvim"
 alias mini="nvim"
+alias vim="nvim"
+alias vi="nvim"
 
 alias rm="trash"
 
