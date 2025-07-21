@@ -142,12 +142,23 @@
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
     "interval": 2,
+    "states": {
+      "high": 65,
+      "medium": 35,
+      "low": 0,
+    },
   },
   "battery": {
     "interval": 1,
     "format": "<span color='#d65d0e'>bat</span> {capacity}%",
-    "format-charging": "<span color='#d65d0e'>bat</span> {capacity}%",
-    "format-plugged": "<span color='#d65d0e'>bat</span> {capacity}%",
+    "states": {
+      "full": 100,
+      "almost": 85,
+      "white0": 84,
+      "white1": 31,
+      "warning": 30,
+      "critical": 15,
+    },
   },
 
 
