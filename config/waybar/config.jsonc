@@ -113,9 +113,9 @@
   },
   "network": {
     "format-wifi": "<span color='#d65d0e'>net</span> {essid}",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{cidr} - {ifname} via {gwaddr}",
-    "format-disconnected": "󰖪 ⚠",
+    "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
+    "tooltip-format": "<span color='#d65d0e'>net</span> {cidr} - {ifname} via {gwaddr}",
+    "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
     "on-click": "nm-connection-editor"
   },
   "custom/wireguard": {
