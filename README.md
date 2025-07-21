@@ -8,7 +8,6 @@
 - Kitty
 - Waybar
 - Sway Notification Centre
-- Syshud volume and brightness OSD
 - Wofi
 - Neovim
 - Zsh
@@ -45,8 +44,8 @@ Make sure you have an AUR helper installed like [paru](https://github.com/Morgan
 
 For AUR stuff install the following:
 ```shell
-yay -S clipse-bin syshud bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
-paru -S clipse-bin syshud bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
+yay -S clipse-bin bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
+paru -S clipse-bin bibata-cursor-theme-bin waypaper arcolinux-logout gruvbox-dark-gtk hyprshot spicetify-cli stremio topgrade-bin
 ```
 ## More Screenshots
 
