@@ -9,7 +9,7 @@ choice=$(echo -e "$options" | wofi --dmenu --prompt "Select Action")
 # Run the corresponding command
 case "$choice" in
 "Toggle Recording")
-  ~/.config/scripts/recoder.sh toggle
+  ~/.config/scripts/recorder.sh toggle
   ;;
 "Toggle Bluetooth")
   bluetooth toggle

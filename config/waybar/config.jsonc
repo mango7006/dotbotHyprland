@@ -104,11 +104,11 @@
     "interval": 1,
   },
   "custom/recording": {
-    "exec": "~/.config/scripts/recoder.sh check",
-    "format": "<span color='#d65d0e'>wg</span> {text}",
+    "exec": "~/.config/scripts/recorder.sh check",
+    "format": "<span color='#d65d0e'>recording</span> {text}",
     "tooltip": false,
     "interval": 3,
-    "on-click": "~/.config/scripts/recoder.sh toggle"
+    "on-click": "~/.config/scripts/recorder.sh toggle"
   },
   "pulseaudio": {
     "format": "<span color='#d65d0e'>vol</span> {volume}",
