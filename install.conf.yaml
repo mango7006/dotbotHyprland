@@ -16,6 +16,7 @@
     ~/.config/wofi: config/wofi/
     ~/.config/gtk-3.0: config/gtk-3.0/
     ~/.config/gtk-4.0: config/gtk-4.0/
+    ~/.config/sys64/hud: config/hud/
     ~/.config/starship.toml: config/starship.toml
     ~/.config/glance: config/glance
     ~/.config/scripts: config/scripts/

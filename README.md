@@ -37,7 +37,7 @@ sudo pacman -Syu base-devel bat blueman-manager brightnessctl curl eza feh firef
 
 For the full experience also install the extras:
 ```shell 
-vlc mpv evince obs-studio spotify-launcher obsidian bitwarden wf-recorder yt-dlp wireguard-tools syncthing qbittorrent decoder discord
+vlc mpv spotify-launcher obsidian bitwarden wf-recorder yt-dlp wireguard-tools syncthing discord
 ```
 
 Make sure you have an AUR helper installed like [paru](https://github.com/Morganamilo/paru?tab=readme-ov-file#installation) or [yay](https://github.com/Jguer/yay?tab=readme-ov-file#installation). Don't know the difference? Choose yay, it sounds happier :).

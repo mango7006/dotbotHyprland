@@ -34,6 +34,7 @@ tooltip {
 #custom-wrk,
 #hyprland-workspaces,
 #tray,
+#custom-recording
 #mpris,
 #pulseaudio,
 #network,
@@ -55,10 +56,6 @@ tooltip {
   color: #ffaa00; /* Orange under 30% */
 }
 
-#battery.charging {
-  color: #00ff00; /* Green when charging */
-}
-
 #battery.almost {
   color: #00ff00;
 }
@@ -73,6 +70,10 @@ tooltip {
 
 #battery.white1 {
   color: #ffffff;
+}
+
+#battery.charging {
+  color: #00ff00; /* Green when charging, this has to be last otherwise it will not show up */
 }
 
 #cpu.high {

@@ -22,6 +22,7 @@
     "tray",
   ],
   "modules-center": [
+    "custom/recording",
     "mpris",
   ],
   "modules-right": [
@@ -46,7 +47,7 @@
     "interval": 1,
   },
   "custom/keyboardHypr": {
-    "interval": 60,
+    "interval": 1,
     "exec": "if hyprctl devices | grep -q \"intl., with\"; then echo \"intl\"; else echo \"us\"; fi",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
     "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
@@ -57,7 +58,8 @@
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueman-manager"
+    "on-click": "blueman-manager",
+    "on-click-right": "bluetooth toggle",
   },
   "custom/wttrNL": {
     "exec": "~/.config/scripts/weather-buienradar.sh",
@@ -100,6 +102,13 @@
       "firefox"
     ],
     "interval": 1,
+  },
+  "custom/recording": {
+    "exec": "~/.config/scripts/recoder.sh check",
+    "format": "<span color='#d65d0e'>wg</span> {text}",
+    "tooltip": false,
+    "interval": 3,
+    "on-click": "~/.config/scripts/recoder.sh toggle"
   },
   "pulseaudio": {
     "format": "<span color='#d65d0e'>vol</span> {volume}",
@@ -151,6 +160,8 @@
   "battery": {
     "interval": 1,
     "format": "<span color='#d65d0e'>bat</span> {capacity}%",
+    "format-charging": "<span color='#d65d0e'>bat</span> {capacity}%",
+    "format-plugged": "<span color='#d65d0e'>bat</span> {capacity}%",
     "states": {
       "full": 100,
       "almost": 85,
