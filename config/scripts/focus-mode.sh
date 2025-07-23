@@ -9,7 +9,7 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword general:gaps_out 0;\
         keyword general:border_size 4;\
         keyword decoration:rounding 0"
-  swww img ~/.config/hypr/wallpapers/wallpaper.png --transition-type none
+  swww img ~/.config/hypr/wallpapers/dark.png --transition-type none
   exit
 fi
 hyprctl reload
