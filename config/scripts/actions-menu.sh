@@ -8,15 +8,21 @@ Toggle Bluetooth
 Toggle Focus Mode
 Toggle Wireguard
 Toggle Light Filter
-Toggle Keyboard Layout
-Toggle Network
+Clean Temporary Files
 EOF
 )
 
+## Extra options
+# Toggle Playerctl
+# Toggle Keyboard Layout
+# Toggle Network
+
 # Show wofi menu
-choice=$(echo -e "$options" | wofi -H 310 --dmenu --prompt "Select Action")
+# 41 pixels per option entry, i.e. 41 * 7 = 287
+choice=$(echo -e "$options" | wofi -H 246 --dmenu --prompt "Select Action")
 
 # Run the corresponding command
+# These should not be commented, only in the options variable
 case "$choice" in
 "Toggle Recording")
   ~/.config/scripts/recorder.sh toggle
@@ -42,6 +48,12 @@ case "$choice" in
   ;;
 "Toggle Network")
   rfkill toggle wlan
+  ;;
+"Clean Temporary Files")
+  kitty --class terminalfloatsmall -e ~/.config/scripts/cleantmp.sh
+  ;;
+"Toggle Playerctl")
+  playerctl play-pause
   ;;
 *)
   exit 1

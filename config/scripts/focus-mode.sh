@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/.config/scripts/wallpaper.conf
+
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ]; then
   hyprctl --batch "\
@@ -9,8 +11,8 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword general:gaps_out 0;\
         keyword general:border_size 4;\
         keyword decoration:rounding 0"
-  swww img ~/.config/hypr/wallpapers/dark.png --transition-type none
+  swww img "$FOCUSWALLPAPER" --transition-type none
   exit
 fi
 hyprctl reload
-swww img ~/.config/hypr/wallpapers/tTIlCNT.jpeg --transition-type none
+swww img "$WALLPAPER" --transition-type none
