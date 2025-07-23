@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+while true; do
+  # Check the original sha1sum and the new one (maybe)
+  original=$(sha256sum ~/.config/waybar/config.jsonc | awk '{print $1}')
+  # echo $original
+  sleep 10
+  changedMaybe=$(sha256sum ~/.config/waybar/config.jsonc | awk '{print $1}')
+  # echo $changedMaybe
+
+  if [[ "$original" == "$changedMaybe" ]]; then
+    # echo "It's the same! "
+    continue
+  else
+    pkill waybar
+    sleep 0.1
+    waybar &>/dev/null &
+  fi
+done

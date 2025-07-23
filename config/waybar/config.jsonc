@@ -20,9 +20,9 @@
     // "custom/wrk",
     // "hyprland/workspaces",
     "tray",
+    "custom/recording",
   ],
   "modules-center": [
-    "custom/recording",
     "mpris",
   ],
   "modules-right": [
@@ -97,7 +97,7 @@
   },
   "mpris": {
     "format": "{artist} / {title}",
-    "max-length": 50,
+    "max-length": 80,
     "ignored-players": [
       "firefox"
     ],
@@ -105,10 +105,10 @@
   },
   "custom/recording": {
     "exec": "~/.config/scripts/recorder.sh check",
-    "format": "<span color='#d65d0e'>recording</span> {text}",
+    "format": "<span color='#ff0000'>{text}</span>",
     "tooltip": false,
     "interval": 3,
-    "on-click": "~/.config/scripts/recorder.sh toggle"
+    "on-click": "~/.config/scripts/recorder.sh toggle",
   },
   "pulseaudio": {
     "format": "<span color='#d65d0e'>vol</span> {volume}",
@@ -121,6 +121,7 @@
     "scroll-step": 5,
   },
   "network": {
+    "format": "<span color='#d65d0e'>net</span> {essid}",
     "format-wifi": "<span color='#d65d0e'>net</span> {essid}",
     "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
     "tooltip-format": "<span color='#d65d0e'>net</span> {cidr} - {ifname} via {gwaddr}",

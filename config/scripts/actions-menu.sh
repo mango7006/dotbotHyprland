@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 
-# Define menu options (what the user sees)
-options="Toggle Recording\nToggle Bluetooth\nToggle Focus Mode\nToggle Wireguard\nToggle Light Filter\nToggle Keyboard Layout"
+# Define menu options
+options=$(
+  cat <<EOF
+Toggle Recording
+Toggle Bluetooth
+Toggle Focus Mode
+Toggle Wireguard
+Toggle Light Filter
+Toggle Keyboard Layout
+Toggle Network
+EOF
+)
 
-# Show wofi menu and get the selected option
-choice=$(echo -e "$options" | wofi --dmenu --prompt "Select Action")
+# Show wofi menu
+choice=$(echo -e "$options" | wofi -H 310 --dmenu --prompt "Select Action")
 
 # Run the corresponding command
 case "$choice" in
@@ -15,16 +25,23 @@ case "$choice" in
   bluetooth toggle
   ;;
 "Toggle Focus Mode")
-  ~/.config/scripts/game-mode.sh
+  ~/.config/scripts/focus-mode.sh
   ;;
 "Toggle Wireguard")
   kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
   ;;
 "Toggle Light Filter")
-  ~/.config/scripts/gammastep.sh
+  if pgrep gammastep >/dev/null; then
+    pkill gammastep
+  else
+    gammastep -O 4500 &
+  fi
   ;;
 "Toggle Keyboard Layout")
   hyprctl switchxkblayout at-translated-set-2-keyboard next
+  ;;
+"Toggle Network")
+  rfkill toggle wlan
   ;;
 *)
   exit 1
