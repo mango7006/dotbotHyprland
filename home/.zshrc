@@ -65,7 +65,9 @@ alias rm="trash"
 alias shutdown="shutdown now"
 alias reboot="shutdown -r now"
 
-alias loginpi="ssh pipi4@192.168.11.128"
+alias rpi="ssh pipi4@192.168.11.128"
+alias phone="ssh u0_a303@192.168.11.28 -p 8022"
+alias wake="wakeonlan 2C:F0:5D:55:17:08"
 
 alias yay="paru"
 

@@ -7,6 +7,7 @@ Toggle Recording
 Toggle Bluetooth
 Toggle Focus Mode
 Toggle Wireguard
+Wake PC and Login
 Toggle Light Filter
 Clean Temporary Files
 EOF
@@ -19,7 +20,7 @@ EOF
 
 # Show wofi menu
 # 41 pixels per option entry, i.e. 41 * 7 = 287
-choice=$(echo -e "$options" | wofi -H 246 --dmenu --prompt "Select Action")
+choice=$(echo -e "$options" | wofi -H 287 --sort-order=alphabetical --dmenu --prompt "Select Action")
 
 # Run the corresponding command
 # These should not be commented, only in the options variable
@@ -54,6 +55,9 @@ case "$choice" in
   ;;
 "Toggle Playerctl")
   playerctl play-pause
+  ;;
+"Wake PC and Login")
+  ~/.config/scripts/wake-pc.sh
   ;;
 *)
   exit 1

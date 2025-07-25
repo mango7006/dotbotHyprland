@@ -30,7 +30,7 @@
     "network",
     "custom/wireguard",
     "custom/mem",
-    "custom/temp",
+    "temperature",
     "cpu",
     "battery"
   ],
@@ -143,18 +143,19 @@
     "return-type": "json",
     "exec": "free -m | awk 'NR==2 { printf \"{\\\"text\\\": \\\"%s MiB\\\", \\\"percentage\\\": %d }\\n\", $3, ($3*100)/$2 }'"
   },
-  "custom/temp": {
-    "exec": "sensors | grep 'CPU' | awk 'NR==2 {print $2}' | sed 's/+//g; s/\\.0//g'",
-    "format": "<span color='#d65d0e'>tmp</span> {text}",
-    "interval": 5,
-    "tooltip": false,
-  },
+  "temperature": {
+    "interval": 4,
+    "thermal-zone": 7,
+    "critical-threshold": 80,
+    "format-critical": "<span color='#d65d0e'>tmp</span> <span color='#ff0000'>{temperatureC}°C</span>",
+    "format": "<span color='#d65d0e'>tmp</span> {temperatureC}°C"
+},
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
     "interval": 2,
     "states": {
       "high": 65,
-      "medium": 35,
+      "medium": 30,
       "low": 0,
     },
   },

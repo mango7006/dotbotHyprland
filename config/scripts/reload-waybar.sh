@@ -3,10 +3,10 @@
 while true; do
   # Check the original sha1sum and the new one (maybe)
   original=$(sha256sum ~/.config/waybar/config.jsonc | awk '{print $1}')
-  # echo $original
+  # echo "$original"
   sleep 10
   changedMaybe=$(sha256sum ~/.config/waybar/config.jsonc | awk '{print $1}')
-  # echo $changedMaybe
+  # echo "$changedMaybe"
 
   if [[ "$original" == "$changedMaybe" ]]; then
     # echo "It's the same! "

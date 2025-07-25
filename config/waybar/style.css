@@ -31,16 +31,16 @@ tooltip {
 #custom-uptime,
 #bluetooth,
 #custom-notification,
+#temperature,
 #custom-wrk,
 #hyprland-workspaces,
 #tray,
-#custom-recording
+#custom-recording,
 #mpris,
 #pulseaudio,
 #network,
 #custom-wireguard,
 #custom-mem,
-#custom-temp,
 #cpu,
 #battery {
   opacity: 1;
