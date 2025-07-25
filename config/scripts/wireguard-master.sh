@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-INTERFACE="wg0"
+source ~/.config/scripts/homewifi.conf
+
+WifiName=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
 
 check() {
   if ip link show "$INTERFACE" &>/dev/null; then
@@ -15,8 +17,13 @@ toggle() {
     echo "Tearing down $INTERFACE..."
     sudo wg-quick down "$INTERFACE"
   else
-    echo "Bringing up $INTERFACE..."
-    sudo wg-quick up "$INTERFACE"
+    if [[ "$WifiName" == "$homewifi" ]]; then
+      echo "You are home, not needed"
+      read -r -p "..."
+    else
+      echo "Bringing up $INTERFACE..."
+      sudo wg-quick up "$INTERFACE"
+    fi
   fi
 }
 
