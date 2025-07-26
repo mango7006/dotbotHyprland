@@ -98,6 +98,7 @@
   "mpris": {
     "format": "{artist} / {title}",
     "max-length": 80,
+    "on-click": "playerctl play-pause",
     "ignored-players": [
       "firefox"
     ],
@@ -126,7 +127,8 @@
     "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
     "tooltip-format": "<span color='#d65d0e'>net</span> {cidr} - {ifname} via {gwaddr}",
     "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
-    "on-click": "nm-connection-editor"
+    "on-click": "nm-connection-editor",
+    "on-click-right": "rfkill toggle wlan",
   },
   "custom/wireguard": {
     "exec": "~/.config/scripts/wireguard-master.sh check",

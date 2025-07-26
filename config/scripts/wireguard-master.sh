@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.config/scripts/homewifi.conf
+source ~/.config/scripts/options.conf
 
 WifiName=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
 
@@ -8,7 +8,7 @@ check() {
   if ip link show "$INTERFACE" &>/dev/null; then
     echo "act"
   else
-    exit 0
+    exit 1
   fi
 }
 

@@ -6,6 +6,10 @@ TEMP=$(curl -s https://gadgets.buienradar.nl/gadget/weathersymbol | grep -oP 'ti
 
 ICON=$(curl -s "wttr.in/?format=%c" | sed 's/+//g; s/C/C /g; s/ //g')
 
+if [[ -z "$ICON" ]] || [[ "$ICON" == *"Unknown"* ]] || [[ "$ICON" == *"Sorry"* ]]; then
+  ICON=""
+fi
+
 ROUNDED=$(printf "%.0f°C" "$TEMP")
 
-echo ""$ROUNDED""$ICON""
+echo "$ROUNDED$ICON"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.config/scripts/wallpaper.conf
+source ~/.config/scripts/options.conf
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ]; then

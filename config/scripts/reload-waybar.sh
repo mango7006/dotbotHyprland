@@ -10,7 +10,7 @@ while true; do
 
   if [[ "$original" == "$changedMaybe" ]]; then
     # echo "It's the same! "
-    continue
+    :
   else
     pkill waybar
     sleep 0.1
