@@ -23,6 +23,8 @@ tooltip {
   color: #ffffff;
 }
 
+/* This doesnt have to be changed ever -- no need to look at colors here */
+/* Default spacing and opacity for all modules */
 #clock,
 #clock.date,
 #custom-keyboardHypr,
@@ -48,42 +50,16 @@ tooltip {
   padding: 0px 5px;
 }
 
-#battery.critical {
-  color: #ff0000; /* Red under 15% */
-}
+/* Battery states */
+#battery.critical { color: #ff0000; }
+#battery.warning { color: #ffaa00; }
+#battery.almost,
+#battery.full,
+#battery.charging { color: #00ff00; }
+#battery.white0,
+#battery.white1 { color: #ffffff; }
 
-#battery.warning {
-  color: #ffaa00; /* Orange under 30% */
-}
-
-#battery.almost {
-  color: #00ff00;
-}
-
-#battery.full {
-  color: #00ff00;
-}
-
-#battery.white0 {
-  color: #ffffff;
-}
-
-#battery.white1 {
-  color: #ffffff;
-}
-
-#battery.charging {
-  color: #00ff00; /* Green when charging, this has to be last otherwise it will not show up */
-}
-
-#cpu.high {
-  color: #ff0000;
-}
-
-#cpu.medium {
-  color: #ffaa00;
-}
-
-#cpu.low {
-  color: #ffffff;
-}
+/* CPU load levels */
+#cpu.high { color: #ff0000; }
+#cpu.medium { color: #ffaa00; }
+#cpu.low { color: #ffffff; }
