@@ -20,10 +20,10 @@
     // "custom/wrk",
     // "hyprland/workspaces",
     "tray",
-    "custom/recording",
+    "custom/recording"
   ],
   "modules-center": [
-    "mpris",
+    "mpris"
   ],
   "modules-right": [
     "pulseaudio",
@@ -38,20 +38,20 @@
     "format": "<span color='#d65d0e'>clk</span> {:%R}",
     "tooltip-format": "{:%R:%S}",
     "format-alt": "<span color='#d65d0e'>clk</span> {:%I:%M %p}",
-    "interval": 1,
+    "interval": 1
   },
   "clock#date": {
     "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
     "tooltip-format": "{:%a %d %b %Y}",
     "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m/%Y}",
-    "interval": 1,
+    "interval": 1
   },
   "custom/keyboardHypr": {
     "interval": 1,
     "exec": "if hyprctl devices | grep -q \"intl., with\"; then echo \"intl\"; else echo \"us\"; fi",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
     "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
-    "tooltip": false,
+    "tooltip": false
   },
   "bluetooth": {
     "format": "<span color='#d65d0e'>blu</span> {status}",
@@ -59,21 +59,21 @@
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "blueman-manager",
-    "on-click-right": "bluetooth toggle",
+    "on-click-right": "bluetooth toggle"
   },
   "custom/wttrNL": {
     "exec": "~/.config/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "tooltip": false,
     "on-click": "firefox --new-tab https://www.buienradar.nl/",
-    "interval": 120,
+    "interval": 120
   },
   "custom/wttrINT": {
     "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",
     "tooltip": false,
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "on-click": "firefox --new-tab https://www.accuweather.com/en/",
-    "interval": 120,
+    "interval": 120
   },
   "custom/notification": {
     "tooltip": false,
@@ -97,19 +97,19 @@
   },
   "mpris": {
     "format": "{artist} / {title}",
+    "interval": 1,
     "max-length": 80,
     "on-click": "playerctl play-pause",
     "ignored-players": [
       "firefox"
-    ],
-    "interval": 1,
+    ]
   },
   "custom/recording": {
     "exec": "~/.config/scripts/recorder.sh check",
     "format": "<span color='#ff0000'>{text}</span>",
     "tooltip": false,
     "interval": 3,
-    "on-click": "~/.config/scripts/recorder.sh toggle",
+    "on-click": "~/.config/scripts/recorder.sh toggle"
   },
   "pulseaudio": {
     "format": "<span color='#d65d0e'>vol</span> {volume}",
@@ -119,7 +119,7 @@
     "on-click": "pavucontrol",
     "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
-    "scroll-step": 5,
+    "scroll-step": 5
   },
   "network": {
     "format": "<span color='#d65d0e'>net</span> {essid}",
@@ -128,13 +128,13 @@
     "tooltip-format": "<span color='#d65d0e'>net</span> {cidr} - {ifname} via {gwaddr}",
     "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
     "on-click": "nm-connection-editor",
-    "on-click-right": "rfkill toggle wlan",
+    "on-click-right": "rfkill toggle wlan"
   },
   "custom/wireguard": {
     "exec": "~/.config/scripts/wireguard-master.sh check",
     "format": "<span color='#d65d0e'>wg</span> {text}",
     "tooltip": false,
-    "interval": 5,
+    "interval": 5
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
@@ -158,8 +158,8 @@
     "states": {
       "high": 65,
       "medium": 30,
-      "low": 0,
-    },
+      "low": 0
+    }
   },
   "battery": {
     "interval": 1,
@@ -172,8 +172,8 @@
       "white0": 84,
       "white1": 31,
       "warning": 30,
-      "critical": 15,
-    },
+      "critical": 15
+    }
   },
 
 
@@ -181,14 +181,14 @@
 
   // THESE ARE IN LIMBO, NEVER IN USE YET NEVER DELETED
   "custom/wrk": {
-    "format": "<span color='#d65d0e'>wrk</span>",
+    "format": "<span color='#d65d0e'>wrk</span>"
   },
   "hyprland/workspaces": {
-	  "format": "{name}",
+	  "format": "{name}"
   },
   "custom/uptime": {
     "exec": "uptime -p | awk '{gsub(\"up \", \"\"); print}'",
     "format": "<span color='#d65d0e'>up</span> {text}",
-    "interval": 10,
-  },
+    "interval": 10
+  }
 }

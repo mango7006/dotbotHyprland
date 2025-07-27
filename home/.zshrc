@@ -90,7 +90,6 @@ cleantmp() {
   paru -Sc --noconfirm
   sudo journalctl --vacuum-time=7d
   rm -rf ~/.cache/paru/clone/
-  yes | trash-empty
 
   clear
   echo  'Wait briefly for disk IO to settle'
