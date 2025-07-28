@@ -148,7 +148,7 @@
   "temperature": {
     "interval": 4,
     "thermal-zone": 7,
-    "critical-threshold": 80,
+    "critical-threshold": 75,
     "format-critical": "<span color='#d65d0e'>tmp</span> <span color='#ff0000'>{temperatureC}°C</span>",
     "format": "<span color='#d65d0e'>tmp</span> {temperatureC}°C"
 },
