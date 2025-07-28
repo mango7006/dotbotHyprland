@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-source ~/.config/scripts/options.conf
+source "$HOME/.config/scripts/options.conf"
 
 WifiName=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
 
+uptime=$(awk '{print int($1 / 60)}' /proc/uptime)
+
 check() {
-  if ip link show "$INTERFACE" &>/dev/null; then
+  if ip link show "$interface" &>/dev/null; then
     echo "act"
   else
     exit 1
@@ -13,16 +15,20 @@ check() {
 }
 
 toggle() {
-  if ip link show "$INTERFACE" | grep -q "UP"; then
-    echo "Tearing down $INTERFACE..."
-    sudo wg-quick down "$INTERFACE"
+  if ip link show "$interface" | grep -q "UP"; then
+    echo "Tearing down $interface..."
+    sudo wg-quick down "$interface"
   else
     if [[ "$WifiName" == "$homewifi" ]]; then
-      echo "You are home, not needed"
-      read -r -p "..."
+      echo " "
+      if [ "$uptime" -gt 2 ]; then
+        read -r -p "You are home, not needed..."
+      else
+        echo "You are home, not needed"
+      fi
     else
-      echo "Bringing up $INTERFACE..."
-      sudo wg-quick up "$INTERFACE"
+      echo "Bringing up $interface..."
+      sudo wg-quick up "$interface"
     fi
   fi
 }

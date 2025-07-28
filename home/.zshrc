@@ -35,14 +35,10 @@ alias la="eza -alh --color=auto --icons"
 alias cat="bat"
 alias rcat="cat"
 
-alias glance="glance -config ~/.config/glance/glance.yml"
+# alias glance="glance -config ~/.config/glance/glance.yml"
 
 cd() {
   __zoxide_z "$@" && ls
-}
-
-AI() {
-  source ~/Sync/code/RobotAi/venv/bin/activate; python3 ~/Sync/code/RobotAi/AAI.py 2>/dev/null; deactivate
 }
 
 alias cp="cp -v"
@@ -52,7 +48,7 @@ alias grep="rg -P -i --color=auto"
 
 alias ip="ip -c=auto"
 
-alias ff="kitten icat -n --place 30x30@0x2 --scale-up --align left ~/Downloads/bober-kurwa.gif | fastfetch --logo-width 30 --raw -"
+alias ff="fastfetch"
 
 alias neovim="nvim"
 alias nano="nvim"
@@ -65,6 +61,7 @@ alias rm="trash"
 alias shutdown="shutdown now"
 alias reboot="shutdown -r now"
 
+# Change these if you are not me
 alias rpi="ssh pipi4@192.168.11.128"
 alias phone="ssh u0_a303@192.168.11.28 -p 8022"
 alias wake="wakeonlan 2C:F0:5D:55:17:08"

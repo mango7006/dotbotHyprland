@@ -11,7 +11,7 @@ timestamp() {
 }
 
 check() {
-  if pgrep wf-recorder &>/dev/null; then
+  if pgrep -x wf-recorder &>/dev/null || pgrep -x obs &>/dev/null; then
     echo "󰻃 "
   else
     exit 0
@@ -21,11 +21,9 @@ check() {
 toggle() {
   if pgrep wf-recorder &>/dev/null; then
     pkill wf-recorder
-    echo "$(timestamp) - Stopped wf-recorder"
   else
     # Create filename with timestamp
     FILE="$SAVE_DIR/screenrecord-$(date +"%Y%m%d-%H%M%S").mkv"
-    echo "$(timestamp) - Starting wf-recorder, saving to $FILE"
     # Start wf-recorder in background
     wf-recorder -f "$FILE" &
   fi

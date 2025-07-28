@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.config/scripts/options.conf
+source "$HOME/.config/scripts/options.conf"
 
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ]; then
@@ -11,8 +11,8 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword general:gaps_out 0;\
         keyword general:border_size 4;\
         keyword decoration:rounding 0"
-  swww img "$FOCUSWALLPAPER" --transition-type none
+  swww img "$focuswallpaper" --transition-type none
   exit
 fi
 hyprctl reload
-swww img "$WALLPAPER" --transition-type none
+swww img "$wallpaper" --transition-type none
