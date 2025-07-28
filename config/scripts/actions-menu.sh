@@ -6,24 +6,24 @@ options=$(
 Wake PC and Login
 Toggle Light Filter
 Toggle Recording
-Toggle Bluetooth
 Toggle Focus Mode
 Toggle Wireguard
 Reload Waybar
 Update Everything
 Clean Temporary Files
-Clean Clipboard History
 EOF
 )
 
 ## Extra options
 # Toggle Playerctl
+# Toggle Bluetooth
+# Clean Clipboard History
 # Toggle Keyboard Layout
 # Toggle Network
 
 # Show wofi menu
 # 41 pixels per option entry, i.e. 41 * 7 = 287
-choice=$(echo -e "$options" | wofi -H 410 --sort-order=default --cache-file=/dev/null --dmenu --prompt "Select Action")
+choice=$(echo -e "$options" | wofi -H 323 --sort-order=default --cache-file=/dev/null --dmenu --prompt "Select Action")
 
 # Run the corresponding command
 # These should not be commented, only in the options variable
