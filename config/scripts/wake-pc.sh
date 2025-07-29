@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
+source "$HOME/.config/scripts/options.conf"
+
 kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
 
-ssh pipi4@192.168.11.128 'wakeonlan 2C:F0:5D:55:17:08'
+kitty --class terminalfloatsmall -e ssh "$homeserver" 'wake'
 
 moonlight
+
+## Packages directly used in this script:
+# moonlight-qt (desktop streaming application)
+# kitty (terminal emulator)
+# openssh (ssh utility)
+# wakeonlan (send magic packet to boot a specified device (this is only on my server you cannot do this) )

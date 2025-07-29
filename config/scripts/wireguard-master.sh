@@ -41,3 +41,7 @@ check) check ;;
   exit 1
   ;;
 esac
+
+## Packages directly used in this script:
+# wireguard-tools (wg-quick private tunnel to my home internet)
+# networkmanager (nmcli command line interface)

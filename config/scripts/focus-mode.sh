@@ -16,3 +16,7 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
 fi
 hyprctl reload
 swww img "$wallpaper" --transition-type none
+
+## Packages directly used in this script:
+# hyprland (hyprctl command line util)
+# swww (wallpaper manager)

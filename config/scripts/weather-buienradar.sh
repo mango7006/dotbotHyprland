@@ -13,3 +13,6 @@ fi
 ROUNDED=$(printf "%.0f°C" "$TEMP")
 
 echo "$ROUNDED$ICON"
+
+## Packages directly used in this script:
+# curl (download/receive online thing idk)

@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# Directory to save recordings
-SAVE_DIR="$HOME/Videos/screenrecord"
+source "$HOME/.config/scripts/options.conf"
 
 # Ensure the directory exists
-mkdir -p "$SAVE_DIR"
+mkdir -p "$save_dir"
 
 timestamp() {
   date +"%Y-%m-%d %H:%M:%S"
@@ -23,9 +22,9 @@ toggle() {
     pkill wf-recorder
   else
     # Create filename with timestamp
-    FILE="$SAVE_DIR/screenrecord-$(date +"%Y%m%d-%H%M%S").mkv"
+    file="$save_dir/screenrecord-$(date +"%Y%m%d-%H%M%S").mkv"
     # Start wf-recorder in background
-    wf-recorder -f "$FILE" &
+    wf-recorder -f "$file" &
   fi
 }
 
@@ -37,3 +36,7 @@ check) check ;;
   exit 1
   ;;
 esac
+
+## Packages directly used in this script:
+# wf-recorder (wayland screenrecord util)
+# obs-studio (recording and streaming app)

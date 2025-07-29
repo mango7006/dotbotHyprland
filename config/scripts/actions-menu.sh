@@ -77,3 +77,12 @@ case "$choice" in
   exit 1
   ;;
 esac
+
+## Packages directly used in this script:
+# kitty (terminal emulator)
+# clipse (AUR clipboard manager)
+# playerctl (command line media manager)
+# hyprctl (command line manager for Hyprland)
+# gammastep (screen color shifting)
+# bluetooth (bluez and bluez-utils packages)
+# wofi (dmenu picker)

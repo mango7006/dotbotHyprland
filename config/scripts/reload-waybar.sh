@@ -33,3 +33,6 @@ reload) reload ;;
   exit 1
   ;;
 esac
+
+## Packages directly used in this script:
+# waybar (statusbar for wayland)

@@ -28,3 +28,6 @@ case "$choice" in
   exit 1
   ;;
 esac
+
+## Packages directly used in this script:
+# wofi (dmenu picker)
