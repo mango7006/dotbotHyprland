@@ -51,13 +51,30 @@ tooltip {
 }
 
 /* Battery states */
-#battery.critical { color: #ff0000; }
-#battery.warning { color: #ffaa00; }
-#battery.almost,
-#battery.full,
-#battery.charging { color: #00ff00; }
-#battery.white0,
-#battery.white1 { color: #ffffff; }
+#battery.critical {
+  color: #ff0000; /* Red under 15% */
+}
+#battery.warning {
+  color: #ffaa00; /* Orange under 30% */
+}
+#battery.almost {
+  color: #00ff00;
+}
+#battery.full {
+  color: #00ff00;
+}
+#battery.white0 {
+
+  color: #ffffff;
+}
+#battery.white1 {
+  color: #ffffff;
+}
+#battery.charging {
+  color: #00ff00; /* Green when charging, this has to be last otherwise it will not show up */
+}
+/* All these orders matter, colors will be wrong otherwise!!! */
+
 
 /* CPU load levels */
 #cpu.high { color: #ff0000; }

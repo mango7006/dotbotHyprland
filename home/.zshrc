@@ -63,8 +63,9 @@ alias reboot="shutdown -r now"
 
 # Change these if you are not me
 alias rpi="ssh pipi4@192.168.11.128"
-alias phone="ssh u0_a303@192.168.11.28 -p 8022"
-alias wake="wakeonlan 2C:F0:5D:55:17:08"
+alias mcserver="ssh minecraft@192.168.11.181"
+alias wake-pc="wakeonlan 2C:F0:5D:55:17:08"
+alias wake-server="wakeonlan 48:21:0b:32:8f:dc"
 
 alias yay="paru"
 
