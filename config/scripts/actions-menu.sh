@@ -71,7 +71,8 @@ case "$choice" in
   clipse -clear
   ;;
 "Reload Waybar")
-  ~/.config/scripts/reload-waybar.sh reload
+  pkill waybar
+  waybar &
   ;;
 *)
   exit 1
