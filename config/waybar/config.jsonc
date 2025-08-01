@@ -30,7 +30,7 @@
     "network",
     "custom/wireguard",
     "custom/mem",
-    "temperature",
+    // "temperature",
     "cpu",
     "battery"
   ],
