@@ -20,6 +20,7 @@
     ~/.config/starship.toml: config/starship.toml
     ~/.config/glance: config/glance
     ~/.config/scripts: config/scripts/
+    ~/.config/topgrade.toml: config/topgrade.toml
     ~/.zshrc: home/.zshrc
     ~/README.md: README.md
 

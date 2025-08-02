@@ -3,6 +3,7 @@
 # Define menu options
 options=$(
   cat <<EOF
+Open Obsidian
 Wake PC and Login
 Toggle Light Filter
 Toggle Wireguard
@@ -61,6 +62,9 @@ case "$choice" in
 "Reload Waybar")
   pkill waybar
   waybar &
+  ;;
+"Open Obsidian")
+  obsidian &
   ;;
 *)
   exit 1
