@@ -20,6 +20,8 @@ zstyle :compinstall filename '/home/mango/.zshrc'
 autoload -Uz compinit
 compinit
 
+source "$HOME/options.conf"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 
@@ -34,8 +36,6 @@ alias la="eza -alh --color=auto --icons"
 
 alias cat="bat"
 alias rcat="cat"
-
-# alias glance="glance -config ~/.config/glance/glance.yml"
 
 cd() {
   __zoxide_z "$@" && ls
@@ -62,10 +62,8 @@ alias shutdown="shutdown now"
 alias reboot="shutdown -r now"
 
 # Change these if you are not me
-alias rpi="ssh pipi4@192.168.11.128"
-alias mcserver="ssh minecraft@192.168.11.181"
-alias wake-pc="wakeonlan 2C:F0:5D:55:17:08"
-alias wake-server="wakeonlan 48:21:0b:32:8f:dc"
+alias rpi="ssh $rpi"
+alias nuc="ssh $nuc"
 
 alias yay="paru"
 
@@ -81,25 +79,7 @@ whatip() {
 }
 
 cleantmp() {
-  local before=$(df --output=used / | tail -n1)
-
-  paccache -rk1
-  sudo systemd-tmpfiles --clean
-  paru -Sc --noconfirm
-  sudo journalctl --vacuum-time=7d
-  rm -rf ~/.cache/paru/clone/
-
-  clear
-  echo  'Wait briefly for disk IO to settle'
-  sleep 1
-
-  local after=$(df --output=used / | tail -n1)
-
-  local freed_kb=$((before - after))
-  local freed_hr=$(numfmt --to=iec --suffix=B <<< $((freed_kb * 1024)))
-
-  clear
-  echo "Cleanup complete. Freed $freed_hr."
+  ~/.config/scripts/cleantmp.sh
 }
 
 zsh_install() {

@@ -5,7 +5,6 @@ options=$(
   cat <<EOF
 Wake PC and Login
 Toggle Light Filter
-Toggle Focus Mode
 Toggle Wireguard
 Reload Waybar
 Update Everything
@@ -14,9 +13,7 @@ EOF
 )
 
 ## Extra options
-# Toggle Playerctl
 # Toggle Bluetooth
-# Toggle Recording
 # Clean Clipboard History
 # Toggle Keyboard Layout
 # Toggle Network
@@ -25,19 +22,13 @@ EOF
 pixels=$(($(echo "$options" | wc -l) * 41))
 
 # Show wofi menu
-choice=$(echo -e "$options" | wofi -H $pixels --sort-order=default --cache-file=/dev/null --dmenu --prompt "Select Action")
+choice=$(echo -e "$options" | wofi -H $pixels --sort-order=default --cache-file=/dev/null -d --prompt "Select Action")
 
 # Run the corresponding command
 # These should not be commented, only in the options variable
 case "$choice" in
-"Toggle Recording")
-  ~/.config/scripts/recorder.sh toggle
-  ;;
 "Toggle Bluetooth")
   bluetooth toggle
-  ;;
-"Toggle Focus Mode")
-  ~/.config/scripts/focus-mode.sh
   ;;
 "Toggle Wireguard")
   kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
@@ -57,9 +48,6 @@ case "$choice" in
   ;;
 "Clean Temporary Files")
   kitty --class terminalfloatsmall -e ~/.config/scripts/cleantmp.sh
-  ;;
-"Toggle Playerctl")
-  playerctl play-pause
   ;;
 "Wake PC and Login")
   ~/.config/scripts/wake-pc.sh
@@ -82,8 +70,9 @@ esac
 ## Packages directly used in this script:
 # kitty (terminal emulator)
 # clipse (AUR clipboard manager)
-# playerctl (command line media manager)
 # hyprctl (command line manager for Hyprland)
 # gammastep (screen color shifting)
 # bluetooth (bluez and bluez-utils packages)
 # wofi (dmenu picker)
+# topgrade-bin (AUR everything updater)
+# waybar (wayland status bar)

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-source "$HOME/.config/scripts/options.conf"
+source "$HOME/options.conf"
 
-WifiName=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
+current_wifi=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
 
 uptime=$(awk '{print int($1 / 60)}' /proc/uptime)
 
@@ -19,10 +19,10 @@ toggle() {
     echo "Tearing down $interface..."
     sudo wg-quick down "$interface"
   else
-    if [[ "$WifiName" == "$homewifi" ]]; then
+    if [[ "$current_wifi" == "$homewifi" ]]; then
       echo " "
       if [ "$uptime" -gt 2 ]; then
-        read -r -p "You are home, not needed..."
+        read -r -t 2 -d "*" -p "You are home, not needed..."
       else
         echo "You are home, not needed"
       fi
@@ -43,5 +43,5 @@ check) check ;;
 esac
 
 ## Packages directly used in this script:
-# wireguard-tools (wg-quick private tunnel to my home internet)
+# wireguard-tools (wg-quick private tunnel to my home network)
 # networkmanager (nmcli command line interface)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$HOME/.config/scripts/options.conf"
+source "$HOME/options.conf"
 
 kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
 

@@ -20,7 +20,6 @@
     // "custom/wrk",
     // "hyprland/workspaces",
     "tray",
-    "custom/recording"
   ],
   "modules-center": [
     "mpris"
@@ -30,7 +29,7 @@
     "network",
     "custom/wireguard",
     "custom/mem",
-    // "temperature",
+    "temperature",
     "cpu",
     "battery"
   ],
@@ -62,7 +61,7 @@
     "on-click-right": "bluetooth toggle"
   },
   "custom/wttrNL": {
-    "exec": "~/.config/scripts/weather-buienradar.sh",
+    "exec": "~/.config/waybar/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "tooltip": false,
     "on-click": "firefox --new-tab https://www.buienradar.nl/",
@@ -103,13 +102,6 @@
     "ignored-players": [
       "firefox"
     ]
-  },
-  "custom/recording": {
-    "exec": "~/.config/scripts/recorder.sh check",
-    "format": "<span color='#ff0000'>{text}</span>",
-    "tooltip": false,
-    "interval": 3,
-    "on-click": "~/.config/scripts/recorder.sh toggle"
   },
   "pulseaudio": {
     "format": "<span color='#d65d0e'>vol</span> {volume}",

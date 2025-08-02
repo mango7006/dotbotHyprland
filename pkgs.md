@@ -20,6 +20,7 @@ hyprlock
 hyprpicker
 hyprshot
 kitty
+luarocks
 libnotify
 ly
 man-db
