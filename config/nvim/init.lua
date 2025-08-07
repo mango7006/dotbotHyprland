@@ -15,3 +15,7 @@ vim.filetype.add({
 })
 vim.api.nvim_create_user_command("W", "write", {})
 vim.api.nvim_create_user_command("Q", "quit", {})
+
+vim.opt.sidescrolloff = 8
+vim.opt.hlsearch = true
+vim.opt.incsearch = true

@@ -3,10 +3,10 @@
 # Define menu options
 options=$(
   cat <<EOF
-Open Obsidian
 Wake PC and Login
 Toggle Light Filter
 Toggle Wireguard
+Calculator
 Reload Waybar
 Update Everything
 Clean Temporary Files
@@ -63,8 +63,8 @@ case "$choice" in
   pkill waybar
   waybar &
   ;;
-"Open Obsidian")
-  obsidian &
+"Calculator")
+  kitty --class terminalfloat -e calc
   ;;
 *)
   exit 1
