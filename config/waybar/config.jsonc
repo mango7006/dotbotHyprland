@@ -47,9 +47,9 @@
   },
   "custom/keyboardHypr": {
     "interval": 1,
-    "exec": "if hyprctl devices | grep -q \"intl., with\"; then echo \"intl\"; else echo \"us\"; fi",
+    "exec": "~/.config/waybar/scripts/kbd.sh check",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "on-click": "~/.config/waybar/scripts/kbd.sh next",
     "tooltip": false
   },
   "bluetooth": {

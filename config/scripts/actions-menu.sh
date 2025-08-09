@@ -6,7 +6,7 @@ options=$(
 Wake PC and Login
 Toggle Light Filter
 Toggle Wireguard
-Calculator
+NOS Teletekst
 Reload Waybar
 Update Everything
 Clean Temporary Files
@@ -16,6 +16,7 @@ EOF
 ## Extra options
 # Toggle Bluetooth
 # Clean Clipboard History
+# Calculator
 # Toggle Keyboard Layout
 # Toggle Network
 
@@ -23,7 +24,7 @@ EOF
 pixels=$(($(echo "$options" | wc -l) * 41))
 
 # Show wofi menu
-choice=$(echo -e "$options" | wofi -H $pixels --sort-order=default --cache-file=/dev/null -d --prompt "Select Action")
+choice=$(echo -e "$options" | wofi -H $pixels -j --sort-order=default --cache-file=/dev/null -d)
 
 # Run the corresponding command
 # These should not be commented, only in the options variable
@@ -65,6 +66,9 @@ case "$choice" in
   ;;
 "Calculator")
   kitty --class terminalfloat -e calc
+  ;;
+"NOS Teletekst")
+  kitty --class teletekst -e ssh teletekst.nl
   ;;
 *)
   exit 1

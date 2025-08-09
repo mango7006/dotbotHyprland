@@ -4,7 +4,9 @@ source "$HOME/options.conf"
 
 kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
 
-kitty --class terminalfloatsmall -e ssh "$homeserver" 'wake'
+# Change this to the bottom one if you do not have ssh keys
+ssh "$rpi" 'wake'
+# kitty --class terminalfloatsmall -e ssh "$rpi" 'wake'
 
 moonlight
 
