@@ -7,7 +7,7 @@
   "height": 35,
   "modules-left": [
     // There are some optional modules that I do not need, enable and disable at will, they are all correctly styled
-    // Please make sure you also have the required scripts in ~/.config/scripts/
+    // Please make sure you also have the required scripts in ~/.config/waybar/scripts/
     "clock",
     "clock#date",
     "custom/keyboardHypr",
@@ -123,7 +123,7 @@
     "on-click-right": "rfkill toggle wlan"
   },
   "custom/wireguard": {
-    "exec": "~/.config/scripts/wireguard-master.sh check",
+    "exec": "~/.config/waybar/scripts/wireguard-check.sh",
     "format": "<span color='#d65d0e'>wg</span> {text}",
     "tooltip": false,
     "interval": 5

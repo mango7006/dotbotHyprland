@@ -13,8 +13,6 @@ vim.filetype.add({
         [".*/wofi/config"] = "hyprlang",
     },
 })
-vim.api.nvim_create_user_command("W", "write", {})
-vim.api.nvim_create_user_command("Q", "quit", {})
 
 vim.opt.sidescrolloff = 8
 vim.opt.hlsearch = true

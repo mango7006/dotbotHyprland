@@ -32,3 +32,7 @@ check) check ;;
   exit 1
   ;;
 esac
+
+# This needs:
+# jq
+# hyprland (for hyprctl)

@@ -1,6 +1,6 @@
 #syshud {
 	background: rgba(40, 40, 40, 0.85);
-	background: transparent;
+	/* background: transparent; */
 }
 
 #syshud .box_layout {

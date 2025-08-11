@@ -11,7 +11,9 @@ EOF
 
 # Show wofi menu
 # 41 pixels per entry, 43 * 3 = 129
-choice=$(echo -e "$options" | wofi -H 129 -j --sort-order=default --cache-file=/dev/null --dmenu --no-actions --prompt "Select Action")
+pixels=$(($(echo "$options" | wc -l) * 43))
+
+choice=$(echo -e "$options" | wofi -H $pixels -j --sort-order=default --cache-file=/dev/null --dmenu --no-actions --prompt "Select Action")
 
 # Run the corresponding command
 case "$choice" in
