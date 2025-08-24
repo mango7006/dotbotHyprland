@@ -47,9 +47,9 @@
   },
   "custom/keyboardHypr": {
     "interval": 1,
-    "exec": "~/.config/waybar/scripts/kbd.sh check",
+    "exec": "~/.config/waybar/scripts/kbd-hypr.sh check",
     "format": "<span color='#d65d0e'>kbd</span> {text}",
-    "on-click": "~/.config/waybar/scripts/kbd.sh next",
+    "on-click": "~/.config/waybar/scripts/kbd-hypr.sh next",
     "tooltip": false
   },
   "bluetooth": {
