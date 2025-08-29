@@ -17,7 +17,7 @@ EOF
 # Toggle Bluetooth
 # Clean Clipboard History
 # Calculator
-# Toggle Keyboard Layout
+# Switch Keyboard Layout
 # Toggle Network
 
 # 41 pixels per option entry, i.e. 41 * 7 = 287
@@ -42,7 +42,7 @@ case "$choice" in
     gammastep -O 4500 &
   fi
   ;;
-"Toggle Keyboard Layout")
+"Switch Keyboard Layout")
   hyprctl switchxkblayout at-translated-set-2-keyboard next
   ;;
 "Toggle Network")

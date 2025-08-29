@@ -2,7 +2,13 @@
 
 source "$HOME/options.conf"
 
-kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
+toggle() {
+  if ip link show "$interface" | grep -q "UP"; then
+    :
+  else
+    kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
+  fi
+}
 
 # Change this to the bottom one if you do not have ssh keys
 ssh "$rpi" 'wake'
