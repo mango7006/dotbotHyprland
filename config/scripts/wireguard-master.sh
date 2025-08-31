@@ -20,7 +20,7 @@ toggle() {
     sudo wg-quick down "$interface"
   else
     if [[ "$current_wifi" == "$homewifi" ]]; then
-      if [ "$uptime" -gt 2 ]; then
+      if [ "$uptime" -gt 1 ]; then
         echo "You are home, not needed..."
         sleep 1
       else

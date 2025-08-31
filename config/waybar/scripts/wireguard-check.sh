@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-source "$HOME/options.conf"
-
-if ip link show "$interface" &>/dev/null; then
-  echo "act"
+# Check if WireGuard is active and not empty
+if [ -n "$(wg show interfaces)" ]; then
+  STATUS="$(wg show interfaces)"
+  PUBLIC_IP=$(curl -4 -s --max-time 2 https://api.ipify.org || echo "timeout")
+  echo "{\"text\":\"$STATUS\",\"tooltip\":\"IP: $PUBLIC_IP\",\"alt\":\"$PUBLIC_IP\"}"
 else
-  # echo "inactive"
-  exit 1
+  PUBLIC_IP=$(curl -4 -s --max-time 2 ifconfig.me)
+  echo "{\"text\":\"inactive\",\"tooltip\":\"IP: $PUBLIC_IP\",\"alt\":\"$PUBLIC_IP\"}"
 fi

@@ -29,7 +29,7 @@
     "network",
     "custom/wireguard",
     "custom/mem",
-    "temperature",
+    // "temperature",
     "cpu",
     "battery"
   ],
@@ -114,19 +114,20 @@
     "scroll-step": 5
   },
   "network": {
-    "format": "<span color='#d65d0e'>net</span> {essid}",
+    "format": "<span color='#d65d0e'>net</span> {ifname}",
     "format-wifi": "<span color='#d65d0e'>net</span> {essid}",
     "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
-    "tooltip-format": "<span color='#d65d0e'>net</span> {cidr} - {ifname} via {gwaddr}",
+    "tooltip-format": "{cidr} - {ifname} via {ipaddr}",
     "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
     "on-click": "nm-connection-editor",
-    "on-click-right": "rfkill toggle wlan"
   },
   "custom/wireguard": {
+    "return-type": "json",
     "exec": "~/.config/waybar/scripts/wireguard-check.sh",
-    "format": "<span color='#d65d0e'>wg</span> {text}",
-    "tooltip": false,
-    "interval": 5
+    "format": "<span color='#d65d0e'>vpn</span> {text}",
+    "format-alt": "<span color='#d65d0e'>IP</span> {alt}",
+    "tooltip": true,
+    "interval": 5,
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",

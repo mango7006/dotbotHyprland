@@ -21,7 +21,6 @@
     ~/.config/scripts: config/scripts/
     ~/.config/topgrade.toml: config/topgrade.toml
     ~/.zshrc: home/.zshrc
-    ~/README.md: README.md
 
 - create:
     - ~/Downloads
