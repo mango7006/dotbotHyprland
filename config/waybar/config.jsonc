@@ -41,7 +41,7 @@
   },
   "clock#date": {
     "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
-    "tooltip-format": "{:%a %d %b %Y}",
+    "tooltip-format": "{:%a %d %b %Y week %g}",
     "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m/%Y}",
     "interval": 1
   },
@@ -61,11 +61,12 @@
     "on-click-right": "bluetooth toggle"
   },
   "custom/wttrNL": {
+    "return-type": "json",
     "exec": "~/.config/waybar/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "tooltip": false,
     "on-click": "firefox --new-tab https://www.buienradar.nl/",
-    "interval": 120
+    "interval": 20,
   },
   "custom/wttrINT": {
     "exec": "curl -s \"wttr.in/?format=%t%c\" | sed 's/+//g; s/C/C /g; s/ //g'",

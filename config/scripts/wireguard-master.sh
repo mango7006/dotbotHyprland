@@ -2,19 +2,18 @@
 
 source "$HOME/options.conf"
 
-current_wifi=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
-
 uptime=$(awk '{print int($1 / 60)}' /proc/uptime)
 
 check() {
   if ip link show "$interface" &>/dev/null; then
-    echo "act"
+    echo "active"
   else
-    exit 1
+    echo "inactive"
   fi
 }
 
 toggle() {
+  current_wifi=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
   if ip link show "$interface" | grep -q "UP"; then
     echo "Tearing down $interface..."
     sudo wg-quick down "$interface"

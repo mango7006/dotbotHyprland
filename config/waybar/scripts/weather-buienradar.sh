@@ -2,17 +2,21 @@
 
 # This script is NL/buienradar only, change the waybar module to be custom/wttrINT for international weather
 
-TEMP=$(curl -s https://gadgets.buienradar.nl/gadget/weathersymbol | grep -oP 'title="Huidige temperatuur: \K[0-9]+(\.[0-9]+)?')
+temp=$(curl -s https://gadgets.buienradar.nl/gadget/weathersymbol | grep -oP 'title="Huidige temperatuur: \K[0-9]+(\.[0-9]+)?')
 
-ICON=$(curl -s "wttr.in/?format=%c" | sed 's/+//g; s/C/C /g; s/ //g')
+icon=$(curl -s "wttr.in/?format=%c" | sed 's/+//g; s/C/C /g; s/ //g')
 
-if [[ -z "$ICON" ]] || [[ "$ICON" == *"Unknown"* ]] || [[ "$ICON" == *"Sorry"* ]]; then
-  ICON=""
+if [[ -z "$icon" ]]; then
+  icon=""
 fi
 
-ROUNDED=$(printf "%.0f°C" "$TEMP")
+if [[ "$icon" == *"please"* ]]; then
+  icon=""
+fi
 
-echo "$ROUNDED$ICON"
+rounded=$(printf "%.0f°C" "$temp")
+
+echo "{\"text\":\"$rounded$icon\"}"
 
 ## Packages directly used in this script:
 # curl (download/receive online thing idk)
