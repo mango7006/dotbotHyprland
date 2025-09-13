@@ -43,7 +43,7 @@
     "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
     "tooltip-format": "{:%a %d %b %Y week %g}",
     "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m/%Y}",
-    "interval": 1
+    "interval": 20
   },
   "custom/keyboardHypr": {
     "interval": 1,
@@ -126,18 +126,14 @@
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/wireguard-check.sh",
     "format": "<span color='#d65d0e'>vpn</span> {text}",
-    "format-alt": "<span color='#d65d0e'>IP</span> {alt}",
     "tooltip": true,
-    "interval": 5,
+    "interval": 1,
   },
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
     "format": "<span color='#d65d0e'>mem</span> {text}",
-    "tooltip": true,
-    "tooltip-format": "<span color='#d65d0e'>mem</span> {percentage}%",
-    "interval": 2,
-    "return-type": "json",
-    "exec": "free -m | awk 'NR==2 { printf \"{\\\"text\\\": \\\"%s MiB\\\", \\\"percentage\\\": %d }\\n\", $3, ($3*100)/$2 }'"
+    "tooltip": false,
+    "interval": 1,
   },
   "temperature": {
     "interval": 4,
@@ -148,7 +144,7 @@
 },
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
-    "interval": 2,
+    "interval": 1,
     "states": {
       "high": 65,
       "medium": 30,
