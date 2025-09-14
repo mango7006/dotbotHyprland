@@ -1,7 +1,7 @@
 # version: 1.0.0
 
 add_newline = false
-continuation_prompt = "[▸▹ ](dimmed white)"
+# continuation_prompt = "[▸▹ ](dimmed white)"
 
 format = """($nix_shell$container$fill$git_metrics\n)$cmd_duration\
 $hostname\
@@ -139,14 +139,6 @@ symbol = "[▶](blue italic)"
 [localip]
 ssh_only = true
 format = " ◯[$localipv4](bold magenta)"
-disabled = false
-
-[time]
-disabled = false
-format = "[ $time]($style)"
-time_format = "%R"
-utc_time_offset = "local"
-style = "italic dimmed white"
 
 [git_branch]
 format = " [$branch(:$remote_branch)]($style)"
@@ -205,11 +197,3 @@ style = "dimmed yellow italic bold"
 [c]
 symbol = "ℂ "
 format = " [$symbol($version(-$name))]($style)"
-
-[docker_context]
-symbol = "◧ "
-format = " docker [$symbol$context]($style)"
-
-[memory_usage]
-symbol = "▪▫▪ "
-format = " mem [${ram}( ${swap})]($style)"

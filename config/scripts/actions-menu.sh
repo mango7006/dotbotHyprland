@@ -6,6 +6,7 @@ options=$(
 Wake PC and Login
 Toggle Light Filter
 Toggle Wireguard
+VPN Menu
 NOS Teletekst
 Reload Waybar
 Update Everything
@@ -33,7 +34,7 @@ case "$choice" in
   bluetooth toggle
   ;;
 "Toggle Wireguard")
-  kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
+  kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle RPI-Home
   ;;
 "Toggle Light Filter")
   if pgrep gammastep >/dev/null; then
@@ -69,6 +70,9 @@ case "$choice" in
   ;;
 "NOS Teletekst")
   kitty --class teletekst -e ssh teletekst.nl
+  ;;
+"VPN Menu")
+  ~/.config/scripts/wireguard-vpn-menu.sh
   ;;
 *)
   exit 1
