@@ -2,56 +2,51 @@
 
 source "$HOME/options.conf"
 
-uptime=$(awk '{print int($1 / 60)}' /proc/uptime)
+uptime=$(($(cut -d. -f1 /proc/uptime) / 60))
 
 check() {
-  if [ -n "$(wg show interfaces)" ]; then
-    STATUS="$(wg show interfaces)"
-    echo "$STATUS"
+  if wg show interfaces &>/dev/null; then
+    wg show interfaces
   else
     echo "inactive"
   fi
 }
 
 toggle() {
-  local iface="$1"
+  local input_interface="$1"
 
-  if ip link show "$iface" | grep -q "UP"; then
-    echo "Tearing down $iface..."
-    sudo wg-quick down "$iface"
-  else
-    # Check for already active WireGuard interfaces
-    active_ifaces=$(wg show interfaces | tr ' ' '\n' | grep -v "^$")
-
-    for active in $active_ifaces; do
-      if [[ "$active" != "$iface" ]]; then
-        echo "Tearing down $active before bringing up $iface..."
-        sudo wg-quick down "$active"
-      fi
-    done
-
-    if [[ "$iface" == "$interface" ]]; then
-      # Only check WiFi if iface is RPI-Home
-      current_wifi=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
-      if [[ "$current_wifi" == "$homewifi" ]]; then
-        if [ "$uptime" -gt 1 ]; then
-          echo "You are home, not needed..."
-          sleep 1
-        else
-          echo "You are home, not needed"
-        fi
-        return
-      fi
-    fi
-
-    echo "Bringing up $iface..."
-    sudo wg-quick up "$iface"
+  if ip link show "$input_interface" | grep -q "UP"; then
+    echo "Tearing down $input_interface..."
+    sudo wg-quick down "$input_interface"
+    return
   fi
+
+  # Tear down other active WireGuard interfaces
+  for active in $(wg show interfaces); do
+    [[ $active != "$input_interface" ]] && {
+      echo "Tearing down $active before bringing up $input_interface..."
+      sudo wg-quick down "$active"
+    }
+  done
+
+  # Home WiFi check (only for primary interface)
+  if [[ $input_interface == "$home_vpn" ]]; then
+    current_wifi=$(nmcli -t -f active,ssid dev wifi | awk -F: '/^yes/ {print $2}')
+    if [[ $current_wifi == "$homewifi" ]]; then
+      msg="You are home, not needed"
+      echo "$msg..."
+      ((uptime > 1)) && sleep 1
+      return
+    fi
+  fi
+
+  echo "Bringing up $input_interface..."
+  sudo wg-quick up "$input_interface"
 }
 
 case "$1" in
 toggle) toggle "$2" ;;
-check) check "$2" ;;
+check) check ;;
 *)
   echo "Usage: $0 {toggle|check} <interface>" >&2
   exit 1

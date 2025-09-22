@@ -119,8 +119,8 @@ show_always = false
 
 [directory]
 home_symbol = "~"
-truncation_length = 2
-truncation_symbol = "~/"
+truncation_length = 5
+truncation_symbol = ".../"
 read_only = " ◈"
 use_os_path_sep = true
 style = "italic blue"

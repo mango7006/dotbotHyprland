@@ -5,7 +5,6 @@ options=$(
   cat <<EOF
 Wake PC and Login
 Toggle Light Filter
-Toggle Wireguard
 VPN Menu
 NOS Teletekst
 Reload Waybar

@@ -36,6 +36,6 @@ window_margin_width 7
 editor nvim
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Dark Medium
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME

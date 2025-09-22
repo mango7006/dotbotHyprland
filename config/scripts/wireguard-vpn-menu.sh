@@ -2,9 +2,9 @@
 
 options=$(
   cat <<EOF
+RPI-Home
 US-FREE-55
 NL-FREE-213
-RPI-Home
 EOF
 )
 

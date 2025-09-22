@@ -6,7 +6,7 @@ toggle() {
   if ip link show "$interface" | grep -q "UP"; then
     :
   else
-    kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle
+    kitty --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle RPI-Home
   fi
 }
 
