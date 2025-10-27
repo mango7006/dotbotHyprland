@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-paccache -rk1
+paccache -rk0
 sudo systemd-tmpfiles --clean
 paru -Sc --noconfirm
 sudo journalctl --vacuum-time=7d

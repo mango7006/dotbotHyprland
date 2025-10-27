@@ -56,6 +56,14 @@ alias mini="nvim"
 alias vim="nvim"
 alias vi="nvim"
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 alias rm="trash"
 
 alias shutdown="shutdown now"
@@ -66,6 +74,7 @@ alias rpi="ssh $rpi"
 alias nuc="ssh $nuc"
 
 alias yay="paru"
+alias pary="paru"
 
 alias home='cd ~'
 alias cd..='cd ..'

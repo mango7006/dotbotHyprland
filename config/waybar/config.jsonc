@@ -61,7 +61,6 @@
     "on-click-right": "bluetooth toggle"
   },
   "custom/wttrNL": {
-    "return-type": "json",
     "exec": "~/.config/waybar/scripts/weather-buienradar.sh",
     "format": "<span color='#d65d0e'>wtr</span> {text}",
     "tooltip": false,

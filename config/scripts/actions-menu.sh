@@ -19,6 +19,7 @@ EOF
 # Calculator
 # Switch Keyboard Layout
 # Toggle Network
+# Programming
 
 # 41 pixels per option entry, i.e. 41 * 7 = 287
 pixels=$(($(echo "$options" | wc -l) * 41))
@@ -72,6 +73,9 @@ case "$choice" in
   ;;
 "VPN Menu")
   ~/.config/scripts/wireguard-vpn-menu.sh
+  ;;
+"Programming")
+  kitty /c/s4731689/
   ;;
 *)
   exit 1
