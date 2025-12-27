@@ -3,17 +3,18 @@
 # Define menu options
 options=$(
   cat <<EOF
-Wake PC and Login
 Toggle Light Filter
 VPN Menu
 NOS Teletekst
 Reload Waybar
 Update Everything
 Clean Temporary Files
+Copy Song Name
 EOF
 )
 
 ## Extra options
+# Wake PC and Login
 # Toggle Bluetooth
 # Clean Clipboard History
 # Calculator
@@ -76,6 +77,9 @@ case "$choice" in
   ;;
 "Programming")
   kitty /c/s4731689/
+  ;;
+"Copy Song Name")
+  playerctl metadata --format '{{title}}' | wl-copy
   ;;
 *)
   exit 1

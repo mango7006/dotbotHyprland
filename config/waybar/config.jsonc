@@ -13,7 +13,7 @@
     "custom/keyboardHypr",
     "bluetooth",
     // Change the weather provider from Netherlands to International if needed
-    "custom/wttrNL",
+    // "custom/wttrNL",
     // "custom/wttrINT",
     // "custom/uptime",
     "custom/notification",
@@ -122,7 +122,6 @@
     "on-click": "nm-connection-editor",
   },
   "custom/wireguard": {
-    "return-type": "json",
     "exec": "~/.config/waybar/scripts/wireguard-check.sh",
     "format": "<span color='#d65d0e'>vpn</span> {text}",
     "tooltip": true,

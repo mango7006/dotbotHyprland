@@ -34,6 +34,8 @@ alias ls="eza --color=auto --icons"
 alias l="eza -a --color=auto --icons"
 alias la="eza -alh --color=auto --icons"
 
+alias p="python3"
+
 alias cat="bat"
 alias rcat="cat"
 

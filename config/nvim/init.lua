@@ -10,6 +10,7 @@ vim.filetype.add({
         [".*/dunst/dunstrc"] = "hyprlang",
         [".*/kitty/*.conf"] = "bash",
         [".*/hypr/.*%.conf"] = "hyprlang",
+        [".*/mango/.*.conf"] = "hyprlang",
         [".*/wofi/config"] = "hyprlang",
     },
 })
@@ -17,3 +18,4 @@ vim.filetype.add({
 vim.opt.sidescrolloff = 8
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
