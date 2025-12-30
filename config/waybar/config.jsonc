@@ -40,7 +40,7 @@
     "interval": 1
   },
   "clock#date": {
-    "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
+    "format": "<span color='#d65d0e'>dat</span> {:%d/%b/%Y}",
     "tooltip-format": "{:%a %d %b %Y week %g}",
     "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m/%Y}",
     "interval": 20
