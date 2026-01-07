@@ -22,6 +22,22 @@
     ~/.config/topgrade.toml: config/topgrade.toml
     ~/.zshrc: home/.zshrc
 
+    ~/.local/share/applications/avahi-discover.desktop: desktop-files/avahi-discover.desktop
+    ~/.local/share/applications/bssh.desktop: desktop-files/bssh.desktop
+    ~/.local/share/applications/bvnc.desktop: desktop-files/bvnc.desktop
+    ~/.local/share/applications/cmake-gui.desktop: desktop-files/cmake-gui.desktop
+    ~/.local/share/applications/electron36.desktop: desktop-files/electron36.desktop
+    ~/.local/share/applications/electron37.desktop: desktop-files/electron37.desktop
+    ~/.local/share/applications/gammastep.desktop: desktop-files/gammastep.desktop
+    ~/.local/share/applications/gammastep-indicator.desktop: desktop-files/gammastep-indicator.desktop
+    ~/.local/share/applications/nvim.desktop: desktop-files/nvim.desktop
+    ~/.local/share/applications/qv4l2.desktop: desktop-files/qv4l2.desktop
+    ~/.local/share/applications/qvidcap.desktop: desktop-files/qvidcap.desktop
+    ~/.local/share/applications/vim.desktop: desktop-files/vim.desktop
+    ~/.local/share/applications/xgps.desktop: desktop-files/xgps.desktop
+    ~/.local/share/applications/xgpsspeed.desktop: desktop-files/xgpsspeed.desktop
+    ~/.local/share/applications/yazi.desktop: desktop-files/yazi.desktop
+
 - create:
     - ~/Downloads
     - ~/gits

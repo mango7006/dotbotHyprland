@@ -5,5 +5,5 @@ if [ -n "$(wg show interfaces)" ]; then
   STATUS="$(wg show interfaces)"
   echo "$STATUS"
 else
-  echo "󰌙"
+  exit 0
 fi

@@ -79,7 +79,9 @@ case "$choice" in
   kitty /c/s4731689/
   ;;
 "Copy Song Name")
-  playerctl metadata --format '{{title}}' | wl-copy
+  song=$(playerctl metadata --format '{{title}}')
+  wl-copy $song
+  firefox --new-tab "https://translate.google.com/?sl=ru&tl=en&text=$song"
   ;;
 *)
   exit 1

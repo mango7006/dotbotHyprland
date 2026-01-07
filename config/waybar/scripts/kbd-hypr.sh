@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-kbd_map=$(hyprctl -j devices | jq -r '.keyboards[] | select(.main == true) | .active_keymap')
-kbd_name=$(hyprctl -j devices | jq -r '.keyboards[] | select(.main == true) | .name')
+read -r kbd_name kbd_map < <(
+  hyprctl -j devices | jq -r '
+    .keyboards[] | select(.main) | "\(.name) \(.active_keymap)"'
+)
 
 check() {
   case "$kbd_map" in
@@ -32,7 +34,3 @@ check) check ;;
   exit 1
   ;;
 esac
-
-# This needs:
-# jq
-# hyprland (for hyprctl)
