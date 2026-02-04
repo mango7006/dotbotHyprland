@@ -16,7 +16,7 @@
     // "custom/wttrNL",
     // "custom/wttrINT",
     // "custom/uptime",
-    "custom/notification",
+    // "custom/notification",
     // "custom/wrk",
     // "hyprland/workspaces",
     "tray",
@@ -36,7 +36,6 @@
   "clock": {
     "format": "<span color='#d65d0e'>clk</span> {:%R}",
     "tooltip-format": "{:%R:%S}",
-    "format-alt": "<span color='#d65d0e'>clk</span> {:%I:%M %p}",
     "interval": 1
   },
   "clock#date": {
@@ -57,7 +56,7 @@
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueberry",
+    "on-click": "kitty --class bluetui -e bluetui",
     "on-click-right": "bluetooth toggle"
   },
   "custom/wttrNL": {

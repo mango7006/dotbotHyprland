@@ -75,6 +75,8 @@ alias rm="trash"
 alias shutdown="shutdown now"
 alias reboot="shutdown -r now"
 
+alias unfuck_trackpad="sudo modprobe -r i2c_hid_acpi && sudo modprobe i2c_hid_acpi"
+
 # Change these if you are not me
 alias rpi="ssh $rpi"
 alias nuc="ssh $nuc"

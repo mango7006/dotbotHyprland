@@ -2,17 +2,18 @@
 
 options=$(
   cat <<EOF
-RPI-Home
+rpi
 US-FREE-55
 NL-FREE-213
+NL-FREE-79
 EOF
 )
 
 # 44 pixels per entry
-pixels=$(($(echo "$options" | wc -l) * 44))
+pixels=$(($(echo "$options" | wc -l) * 50))
 
 # Show wofi menu
-choice=$(echo -e "$options" | wofi -H $pixels -j --sort-order=default --cache-file=/dev/null -d)
+choice=$(echo -e "$options" | wofi -H $pixels --sort-order=default --cache-file=/dev/null -d)
 
 # Run only if something was chosen
 if [ -n "$choice" ]; then

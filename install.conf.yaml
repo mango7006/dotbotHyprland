@@ -37,12 +37,14 @@
     ~/.local/share/applications/xgps.desktop: desktop-files/xgps.desktop
     ~/.local/share/applications/xgpsspeed.desktop: desktop-files/xgpsspeed.desktop
     ~/.local/share/applications/yazi.desktop: desktop-files/yazi.desktop
+    ~/.local/share/applications/btop.desktop: desktop-files/btop.desktop
 
 - create:
-    - ~/Downloads
-    - ~/gits
+    - ~/.local/share/applications
     - ~/Screenshots
+    - ~/Downloads
     - ~/Sync
+    - ~/gits
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -32,7 +32,7 @@ toggle() {
   # Home WiFi check (only for primary interface)
   if [[ $input_interface == "$home_vpn" ]]; then
     current_wifi=$(nmcli -t -f active,ssid dev wifi | awk -F: '/^yes/ {print $2}')
-    if [[ $current_wifi == "$homewifi" ]]; then
+    if [[ "$current_wifi" == "$homewifi" || "$current_wifi" == "$homewifi2" ]]; then
       msg="You are home, not needed"
       echo "$msg..."
       ((uptime > 1)) && sleep 1
