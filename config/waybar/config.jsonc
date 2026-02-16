@@ -39,8 +39,8 @@
     "interval": 1
   },
   "clock#date": {
-    "format": "<span color='#d65d0e'>dat</span> {:%d/%b/%Y}",
-    "tooltip-format": "{:%a %d %b %Y week %g}",
+    "format": "<span color='#d65d0e'>dat</span> {:%d/%b}",
+    "tooltip-format": "{:%A %d %B %Y week %g}",
     "format-alt": "<span color='#d65d0e'>dat</span> {:%d/%m/%Y}",
     "interval": 20
   },
@@ -123,7 +123,7 @@
   "custom/wireguard": {
     "exec": "~/.config/waybar/scripts/wireguard-check.sh",
     "format": "<span color='#d65d0e'>vpn</span> {text}",
-    "tooltip": true,
+    "tooltip": false,
     "interval": 1,
   },
   "custom/mem": {
@@ -153,6 +153,7 @@
     "format": "<span color='#d65d0e'>bat</span> {capacity}%",
     "format-charging": "<span color='#d65d0e'>bat</span> {capacity}%",
     "format-plugged": "<span color='#d65d0e'>bat</span> {capacity}%",
+    "tooltip": false,
     "states": {
       "full": 100,
       "almost": 85,

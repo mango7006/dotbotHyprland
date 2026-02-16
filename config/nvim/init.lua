@@ -4,6 +4,9 @@ require("highlight-undo").setup({})
 require("urlview").setup({})
 vim.o.scrolloff = 15
 
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
 vim.opt.sidescrolloff = 8
 vim.opt.hlsearch = true
 vim.opt.incsearch = true

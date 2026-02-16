@@ -6,6 +6,7 @@ options=$(
 Toggle Light Filter
 VPN Menu
 NOS Teletekst
+Notes
 Reload Waybar
 Update Everything
 Clean Temporary Files
@@ -82,6 +83,9 @@ case "$choice" in
   song=$(playerctl metadata --format '{{title}}')
   wl-copy $song
   firefox --new-tab "https://translate.google.com/?sl=ru&tl=en&text=$song"
+  ;;
+"Notes")
+  kitty ~/Sync/Obsidian/notes/02\ -\ School/
   ;;
 *)
   exit 1
