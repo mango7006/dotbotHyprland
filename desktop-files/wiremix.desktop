@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=wiremix
+Exec=kitty --class wiremix -e wiremix
+Type=Application

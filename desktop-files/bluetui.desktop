@@ -1,2 +1,4 @@
 [Desktop Entry]
-Exec=kitty -e bluetui
+Type=Application
+Name=bluetui
+Exec=kitty --class bluetui -e bluetui

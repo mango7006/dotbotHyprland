@@ -11,6 +11,7 @@
     "clock",
     "clock#date",
     "custom/keyboardHypr",
+    "custom/wireguard",
     "bluetooth",
     // Change the weather provider from Netherlands to International if needed
     // "custom/wttrNL",
@@ -27,7 +28,6 @@
   "modules-right": [
     "pulseaudio",
     "network",
-    "custom/wireguard",
     "custom/mem",
     // "temperature",
     "cpu",
@@ -107,7 +107,7 @@
     "tooltip": true,
     "format-muted": "<span color='#d65d0e'>vol</span> muted",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-click": "pavucontrol",
+    "on-click": "kitty --class wiremix -e wiremix",
     "on-scroll-up": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-",
     "scroll-step": 5
@@ -118,7 +118,7 @@
     "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
     "tooltip-format": "{cidr} - {ifname} via {ipaddr}",
     "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
-    "on-click": "nm-connection-editor",
+    "on-click": "kitty --class impala -e impala",
   },
   "custom/wireguard": {
     "exec": "~/.config/waybar/scripts/wireguard-check.sh",

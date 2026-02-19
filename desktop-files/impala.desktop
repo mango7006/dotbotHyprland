@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=impala
+Exec=kitty --class impala -e impala

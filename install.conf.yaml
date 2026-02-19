@@ -38,6 +38,9 @@
     ~/.local/share/applications/xgpsspeed.desktop: desktop-files/xgpsspeed.desktop
     ~/.local/share/applications/yazi.desktop: desktop-files/yazi.desktop
     ~/.local/share/applications/btop.desktop: desktop-files/btop.desktop
+    ~/.local/share/applications/wiremix.desktop: desktop-files/wiremix.desktop
+    ~/.local/share/applications/impala.desktop: desktop-files/impala.desktop
+    ~/.local/share/applications/bluetui.desktop: desktop-files/bluetui.desktop
 
 - create:
     - ~/.local/share/applications
