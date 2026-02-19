@@ -41,6 +41,9 @@
     ~/.local/share/applications/wiremix.desktop: desktop-files/wiremix.desktop
     ~/.local/share/applications/impala.desktop: desktop-files/impala.desktop
     ~/.local/share/applications/bluetui.desktop: desktop-files/bluetui.desktop
+    ~/.local/share/applications/bluetui.png: desktop-files/bluetui.png
+    ~/.local/share/applications/impala.png: desktop-files/impala.png
+    ~/.local/share/applications/wiremix.png: desktop-files/wiremix.png
 
 - create:
     - ~/.local/share/applications

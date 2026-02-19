@@ -2,3 +2,4 @@
 Name=wiremix
 Exec=kitty --class wiremix -e wiremix
 Type=Application
+Icon=/home/mango/.local/share/applications/wiremix.png

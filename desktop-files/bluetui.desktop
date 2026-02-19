@@ -2,3 +2,4 @@
 Type=Application
 Name=bluetui
 Exec=kitty --class bluetui -e bluetui
+Icon=/home/mango/.local/share/applications/bluetui.png

@@ -2,3 +2,4 @@
 Type=Application
 Name=impala
 Exec=kitty --class impala -e impala
+Icon=/home/mango/.local/share/applications/impala.png

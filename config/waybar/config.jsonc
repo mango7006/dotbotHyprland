@@ -129,6 +129,7 @@
   "custom/mem": {
     "exec": "free -m | awk 'NR==2 { print $3 \" MiB\" }'",
     "format": "<span color='#d65d0e'>mem</span> {text}",
+    "on-click": "kitty --class btop -e btop",
     "tooltip": false,
     "interval": 1,
   },
@@ -141,6 +142,7 @@
 },
   "cpu": {
     "format": "<span color='#d65d0e'>cpu</span> {usage}%",
+    "on-click": "kitty --class btop -e btop",
     "interval": 1,
     "states": {
       "high": 65,
