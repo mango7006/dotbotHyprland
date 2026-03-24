@@ -53,9 +53,7 @@
   },
   "bluetooth": {
     "format": "<span color='#d65d0e'>blu</span> {status}",
-    "tooltip-format": "{device_alias}",
-    "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format": "{device_alias}, {device_battery_percentage}%",
     "on-click": "kitty --class bluetui -e bluetui",
     "on-click-right": "bluetooth toggle"
   },
@@ -164,21 +162,5 @@
       "warning": 30,
       "critical": 15
     }
-  },
-
-
-
-
-  // THESE ARE IN LIMBO, NEVER IN USE YET NEVER DELETED
-  "custom/wrk": {
-    "format": "<span color='#d65d0e'>wrk</span>"
-  },
-  "hyprland/workspaces": {
-	  "format": "{name}"
-  },
-  "custom/uptime": {
-    "exec": "uptime -p | awk '{gsub(\"up \", \"\"); print}'",
-    "format": "<span color='#d65d0e'>up</span> {text}",
-    "interval": 10
   }
 }
