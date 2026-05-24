@@ -58,7 +58,7 @@ tooltip {
   color: #ffaa00; /* Orange under 30% */
 }
 #battery.almost {
-  color: #00ff00;
+  color: #ffffff;
 }
 #battery.full {
   color: #00ff00;
