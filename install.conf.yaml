@@ -49,7 +49,6 @@
     - ~/.local/share/applications
     - ~/Screenshots
     - ~/Downloads
-    - ~/Sync
     - ~/gits
 
 - shell:
