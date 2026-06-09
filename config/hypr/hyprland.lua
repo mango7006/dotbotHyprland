@@ -8,12 +8,12 @@ hl.monitor({
 local terminal = "kitty"
 local menu = "wofi --show drun --allaw-images"
 local browser = "firefox"
-local wallpaper = 'awww img "~/.config/hypr/wallpapers/orange-mountain-church.png" --transition-type none'
+local wallpaper = "~/.config/hypr/wallpapers/orange-mountain-church.png"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("awww-daemon")
-	hl.exec_cmd(wallpaper)
+	hl.exec_cmd("awww img " .. wallpaper .. " --transition-type none")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("clipse -listen")
 	hl.exec_cmd("hypridle")
@@ -152,23 +152,114 @@ hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "al
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
+hl.layer_rule({
+	blur = true,
+	match = { namespace = "waybar" },
+})
+
+hl.layer_rule({
+	blur = true,
+	match = { namespace = "wofi" },
+})
+
+hl.window_rule({
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
+	suppress_event = "maximize",
+})
+
+hl.window_rule({
+	-- Fix some dragging issues with XWayland
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
+
+	no_focus = true,
+})
+
+hl.window_rule({
+	name = "private-sharing",
+	no_screen_share = true,
+	match = { class = "Bitwarden" },
+})
+
+hl.window_rule({
+	name = "terminalfloat",
+	float = true,
+	center = true,
+	size = { 1000, 600 },
+	match = { class = "terminalfloat" },
+})
+
+hl.window_rule({
+	name = "terminalfloatsmall",
+	float = true,
+	center = true,
+	size = { 430, 100 },
+	match = { class = "terminalfloatsmall" },
+})
+
+hl.window_rule({
+	name = "waypaper",
+	float = true,
+	center = true,
+	size = { 800, 600 },
+	match = { class = "waypaper" },
+})
+
+hl.window_rule({
+	name = "wiremix",
+	float = true,
+	center = true,
+	size = { 1000, 600 },
+	match = { class = "wiremix" },
+})
+
+hl.window_rule({
+	name = "nwg-look",
+	float = true,
+	center = true,
+	size = { 1000, 600 },
+	match = { class = "nwg-look" },
+})
+
+hl.window_rule({
+	name = "bluetui",
+	float = true,
+	center = true,
+	size = { 1000, 600 },
+	match = { class = "bluetui" },
+})
+
+hl.window_rule({
+	name = "btop",
+	float = true,
+	center = true,
+	size = { 1200, 700 },
+	match = { class = "btop" },
+})
+
+hl.window_rule({
+	name = "impala",
+	float = true,
+	center = true,
+	size = { 1000, 600 },
+	match = { class = "impala" },
+})
+
+hl.window_rule({
+	name = "teletekst",
+	float = true,
+	center = true,
+	size = { 750, 750 },
+	match = { class = "teletekst" },
+})
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -176,20 +267,22 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
-hl.bind(
-	mainMod .. " + M",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
-)
--- hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ "fullscreen", "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(browser .. " --private-window"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("~/.config/waybar/scripts/kbd-hypr.sh next"))
+
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("~/.config/scripts/shutdown-menu.sh"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("~/.config/scripts/actions-menu.sh"))
+
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(mainMod .. " + J", hl.dsp.exec_cmd("swaync-client -C"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(terminal .. " --class terminalfloat -e clipse"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -197,21 +290,13 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
+hl.bind("print", hl.dsp.exec_cmd("hyprshot -m region -o ~/Screenshots"))
+
+for i = 1, 4 do
 	local key = i % 10 -- 10 maps to key 0
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -241,58 +326,8 @@ hl.bind(
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
--- Requires playerctl
+-- Requires playerctl and buttons (which I don't have... Thanks DELL...)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-
---------------------------------
----- WINDOWS AND WORKSPACES ----
---------------------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
--- Example window rules that are useful
-
-local suppressMaximizeRule = hl.window_rule({
-	-- Ignore maximize requests from all apps. You'll probably like this.
-	name = "suppress-maximize-events",
-	match = { class = ".*" },
-
-	suppress_event = "maximize",
-})
--- suppressMaximizeRule:set_enabled(false)
-
-hl.window_rule({
-	-- Fix some dragging issues with XWayland
-	name = "fix-xwayland-drags",
-	match = {
-		class = "^$",
-		title = "^$",
-		xwayland = true,
-		float = true,
-		fullscreen = false,
-		pin = false,
-	},
-
-	no_focus = true,
-})
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- Hyprland-run windowrule
-hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
-
-	move = "20 monitor_h-120",
-	float = true,
-})
