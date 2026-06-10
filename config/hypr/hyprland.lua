@@ -21,7 +21,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprctl setcursor Adwaita 14")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme Adwaita")
-	-- hl.exec_cmd("$terminal --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle RPI-Home")
+	hl.exec_cmd(terminal .. " --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle RPI-Home")
 end)
 
 -------------------------------
@@ -246,11 +246,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "impala",
+	name = "nm-connection-editor",
 	float = true,
 	center = true,
 	size = { 1000, 600 },
-	match = { class = "impala" },
+	match = { class = "nm-connection-editor" },
 })
 
 hl.window_rule({
