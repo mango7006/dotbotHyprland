@@ -284,13 +284,23 @@ hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + J", hl.dsp.exec_cmd("swaync-client -C"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(terminal .. " --class terminalfloat -e clipse"))
 
+hl.bind("print", hl.dsp.exec_cmd("hyprshot -m region -o ~/Screenshots"))
+
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
-hl.bind("print", hl.dsp.exec_cmd("hyprshot -m region -o ~/Screenshots"))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
+
+hl.bind(mainMod .. " + CTRL + left", hl.dsp.window.resize({ x = -35, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 35, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + up", hl.dsp.window.resize({ x = 0, y = -35, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + CTRL + down", hl.dsp.window.resize({ x = 0, y = 35, relative = true }), { repeating = true })
 
 for i = 1, 4 do
 	local key = i % 10 -- 10 maps to key 0
@@ -323,11 +333,24 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s 10%+"), { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("brightnessctl s 10%- --min-value=1"),
+	{ locked = true, repeating = true }
+)
+
+-- Locks the screen and suspends, make sure you change `/etc/systemd/logind.conf` to ignore lid
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprlock --grace 0 & systemctl syspend"))
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock --grace 0 & systemctl suspend"))
 
 -- Requires playerctl and buttons (which I don't have... Thanks DELL...)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+-- Instead I use these keys:
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+-- For now, no way to detect the keys so just comment the last 3 out if you do have keys.
