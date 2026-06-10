@@ -55,7 +55,7 @@
     "format": "<span color='#d65d0e'>blu</span> {status}",
     "tooltip-format": "{device_alias}, {device_battery_percentage}%",
     "on-click": "kitty --class bluetui -e bluetui",
-    "on-click-right": "bluetooth toggle"
+    "on-click-right": "bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on"
   },
   "custom/wttrNL": {
     "exec": "~/.config/waybar/scripts/weather-buienradar.sh",
@@ -116,7 +116,7 @@
     "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
     "tooltip-format": "{cidr} - {ifname} via {ipaddr}",
     "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
-    "on-click": "kitty --class impala -e impala",
+    "on-click": "nm-connection-editor",
   },
   "custom/wireguard": {
     "exec": "~/.config/waybar/scripts/wireguard-check.sh",
