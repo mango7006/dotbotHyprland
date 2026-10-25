@@ -1,0 +1,13 @@
+brogue
+clipse
+durdraw
+featherwallet-bin
+gruvbox-dark-gtk
+paru
+paru-debug
+python-eduvpn-client
+quarto-cli-bin
+stremio-linux-shell
+syshud
+topgrade-bin
+waypaper
