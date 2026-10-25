@@ -1,14 +1,21 @@
 hl.monitor({
-	output = "",
+	output = "eDP-1",
 	mode = "preferred",
 	position = "0x0",
 	scale = "1",
 })
 
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	scale = "auto",
+	mirror = "eDP-1",
+})
+
 local terminal = "kitty"
 local menu = "wofi --show drun --allaw-images"
 local browser = "firefox"
-local wallpaper = "~/.config/hypr/wallpapers/orange-mountain-church.png"
+local wallpaper = "~/.config/hypr/wallpapers/misty-forest.png"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
@@ -24,45 +31,18 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal .. " --class terminalfloatsmall -e ~/.config/scripts/wireguard-master.sh toggle RPI-Home")
 end)
 
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
 hl.env("XCURSOR_THEME", "Adwaita")
 hl.env("XCURSOR_SIZE", "14")
 hl.env("HYPRCURSOR_SIZE", "14")
 hl.env("HYPRCURSOR_THEME", "Adwaita")
 hl.env("TERM", terminal)
------------------------
------ PERMISSIONS -----
------------------------
 
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
--- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
--- for security reasons
-
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
-
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
--- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
------------------------
----- LOOK AND FEEL ----
------------------------
-
--- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	dwindle = { preserve_split = true },
 
 	general = {
 		gaps_in = 6,
 		gaps_out = 12,
-
 		border_size = 4,
 
 		col = {
@@ -70,9 +50,7 @@ hl.config({
 			inactive_border = "rgb(3c3836)",
 		},
 
-		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
 		resize_on_border = false,
-
 		allow_tearing = false,
 		layout = "dwindle",
 	},
@@ -261,11 +239,7 @@ hl.window_rule({
 	match = { class = "teletekst" },
 })
 
----------------------
----- KEYBINDINGS ----
----------------------
-
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -292,18 +266,21 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
+-- Move windows with mainMod + SHIFT + arrow keys
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
+-- Resize windows with mainMod + CRTL + arrow keys
 hl.bind(mainMod .. " + CTRL + left", hl.dsp.window.resize({ x = -35, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 35, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + up", hl.dsp.window.resize({ x = 0, y = -35, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + down", hl.dsp.window.resize({ x = 0, y = 35, relative = true }), { repeating = true })
 
+-- Maps mainMod and 1-4 to workspaces
 for i = 1, 4 do
-	local key = i % 10 -- 10 maps to key 0
+	local key = i % 10
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
@@ -315,12 +292,12 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
 	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
@@ -353,4 +330,3 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
--- For now, no way to detect the keys so just comment the last 3 out if you do have keys.

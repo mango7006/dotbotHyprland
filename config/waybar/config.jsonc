@@ -113,7 +113,7 @@
   "network": {
     "format": "<span color='#d65d0e'>net</span> {ifname}",
     "format-wifi": "<span color='#d65d0e'>net</span> {essid}",
-    "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr}/{cidr} ",
+    "format-ethernet": "<span color='#d65d0e'>net</span> {ipaddr} ",
     "tooltip-format": "{cidr} - {ifname} via {ipaddr}",
     "format-disconnected": "<span color='#d65d0e'>net</span> Disconnected",
     "on-click": "nm-connection-editor",

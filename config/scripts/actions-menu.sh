@@ -24,7 +24,7 @@ EOF
 # Programming
 
 # 41 pixels per option entry, i.e. 41 * 7 = 287
-pixels=$(($(echo "$options" | wc -l) * 44))
+pixels=$(($(echo "$options" | wc -l) * 50))
 
 # Show wofi menu
 choice=$(echo -e "$options" | wofi -H $pixels --sort-order=default --cache-file=/dev/null -d)

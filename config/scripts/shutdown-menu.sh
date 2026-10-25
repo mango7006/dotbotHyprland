@@ -2,33 +2,32 @@
 
 # Define menu options
 options=$(
-  cat <<EOF
+    cat <<EOF
 Shutdown
 Reboot
-Suspend
 EOF
 )
 
 # Show wofi menu
 # 41 pixels per entry, 43 * 3 = 129
-pixels=$(($(echo "$options" | wc -l) * 49))
+pixels=$(($(echo "$options" | wc -l) * 66))
 
 choice=$(echo -e "$options" | wofi -H $pixels --sort-order=default --cache-file=/dev/null --dmenu --no-actions --prompt "Select Action")
 
 # Run the corresponding command
 case "$choice" in
 "Shutdown")
-  shutdown now
-  ;;
+    shutdown now
+    ;;
 "Suspend")
-  systemctl suspend
-  ;;
+    systemctl suspend
+    ;;
 "Reboot")
-  systemctl reboot
-  ;;
+    systemctl reboot
+    ;;
 *)
-  exit 1
-  ;;
+    exit 1
+    ;;
 esac
 
 ## Packages directly used in this script:
